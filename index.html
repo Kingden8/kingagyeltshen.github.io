@@ -6,59 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinga Gyeltshen's Personal Blog</title>
     <style>
-        /* ===== Header Image with Text Overlay ===== */
-        .header-container {
-            width: 100%;
-            height: 400px; /* Adjust height as needed */
-            position: relative;
-            overflow: hidden;
-            border-bottom: 3px solid #BF0A30; /* Red accent border */
-        }
+        /* ===== New Header Image Styles ===== */
+.header-image-container {
+    width: 100%;
+    height: 400px; /* Ideal header height */
+    overflow: hidden;
+    position: relative;
+    border-bottom: 3px solid #BF0A30; /* Canada red accent */
+}
 
-        .header-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-        }
+.main-header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Smart cropping */
+    object-position: center 30%; /* Focus on top part of image */
+}
 
-        /* Text Overlay */
-        .header-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            width: 100%;
-            padding: 0 20px;
-            box-sizing: border-box;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-        }
-
-        .header-text h1 {
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-        }
-
-        .header-text p {
-            font-size: 1.2rem;
+/* Adjust existing header to accommodate image */
+header {
+    margin-top: -5px; /* Seamless connection */
+    position: relative;
+    z-index: 2; /* Keeps text above image if needed */
+}
+       
+        /* Basic CSS styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
             margin: 0;
-            font-style: italic;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
         }
-
-        /* Remove original header completely */
+        
         header {
-            display: none;
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav {
+            background: #34495e;
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+        
+        .main {
+            float: left;
+            width: 70%;
+            padding-right: 2rem;
+            box-sizing: border-box;
+        }
+        
+        aside {
+            float: right;
+            width: 30%;
+            background: #ecf0f1;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            clear: both;
+        }
+        
+        .post {
+            background: #fff;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .post h2 {
+            margin-top: 0;
+        }
+        
+        .post-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main, aside {
+                width: 100%;
+                float: none;
+                padding-right: 0;
+            }
         }
     </style>
 </head>
 <body>
-</head>
-<body>
    <div class="header-image-container">
     <img src="header-image.jpg" alt="Bhutan-Canada" class="main-header-image">
-   <div class="header-text">
+   </div>
     <header>
         <h1>My Personal Blog</h1>
         <p>"Druk to Fredericton: Engineering a Life Where Prayer Flags Meet Maple Leaves"</p>
