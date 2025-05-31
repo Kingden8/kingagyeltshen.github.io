@@ -154,7 +154,7 @@ header {
             <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
         </ul>
     </nav>
-    <div id="home" class="tab-content active">
+    <div id="home" class="tab-content">
     <div class="container">
             <h1>Where the Himalayas Meet the Maritimes</h1>
             <p>Welcome to my corner of the internet! I’m <strong>Kinga Gyeltshen</strong>...</p>
@@ -180,26 +180,17 @@ header {
             <!-- About content -->
         </div>
     </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabLinks = document.querySelectorAll('.tab-link');
-            
-            tabLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Hide all tab contents
-                    document.querySelectorAll('.tab-content').forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    // Show clicked tab content
-                    const tabId = this.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-        });
-    </script>
+    <div id="blog" class="tab-content">
+    <div class="container">
+        <!-- Blog content -->
+    </div>
+</div>
+
+<div id="contact" class="tab-content">
+    <div class="container">
+        <!-- Contact content -->
+    </div>
+</div>
     <div class="container">
         <main class="main">
             <article class="post">
