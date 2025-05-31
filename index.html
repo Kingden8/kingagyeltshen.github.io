@@ -6,131 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinga Gyeltshen's Personal Blog</title>
     <style>
-        /* ===== New Header Image Styles ===== */
-.header-image-container {
-    width: 100%;
-    height: 400px; /* Ideal header height */
-    overflow: hidden;
-    position: relative;
-    border-bottom: 3px solid #BF0A30; /* Canada red accent */
-}
-
-.main-header-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Smart cropping */
-    object-position: center 30%; /* Focus on top part of image */
-}
-
-/* Adjust existing header to accommodate image */
-header {
-    margin-top: -5px; /* Seamless connection */
-    position: relative;
-    z-index: 2; /* Keeps text above image if needed */
-}
-       
-        /* Basic CSS styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        
-        header {
-            background: #2c3e50;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        
-        nav {
-            background: #34495e;
-            padding: 0.5rem;
-        }
-        
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        
-        nav ul li {
-            margin: 0 1rem;
-        }
-        
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        
-        .container {
-            width: 80%;
-            margin: auto;
+        /* ===== Header Image with Overlay Text ===== */
+        .header-image-container {
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            position: relative; /* Required for absolute child positioning */
             overflow: hidden;
-            padding: 2rem 0;
+            border-bottom: 3px solid #BF0A30;
         }
-        
-        .main {
-            float: left;
-            width: 70%;
-            padding-right: 2rem;
-            box-sizing: border-box;
+
+        .main-header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
         }
-        
-        aside {
-            float: right;
-            width: 30%;
-            background: #ecf0f1;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-        
-        footer {
-            background: #2c3e50;
-            color: #fff;
+
+        /* Overlay text container */
+        .header-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            padding: 1rem 0;
-            clear: both;
+            color: white;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
         }
-        
-        .post {
-            background: #fff;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        .header-text-overlay h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        
-        .post h2 {
-            margin-top: 0;
+
+        .header-text-overlay p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
-        
-        .post-meta {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .main, aside {
-                width: 100%;
-                float: none;
-                padding-right: 0;
-            }
+
+        /* Remove the old header's gray background */
+        header {
+            background: transparent; /* Removes gray */
+            padding: 0;
         }
     </style>
 </head>
 <body>
    <div class="header-image-container">
     <img src="header-image.jpg" alt="Bhutan-Canada" class="main-header-image">
-   </div>
+   <div class="header-text-overlay">
     <header>
         <h1>My Personal Blog</h1>
         <p>"Druk to Fredericton: Engineering a Life Where Prayer Flags Meet Maple Leaves"</p>
