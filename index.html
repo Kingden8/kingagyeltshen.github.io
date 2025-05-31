@@ -5,103 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinga Gyeltshen's Personal Blog</title>
     <style>
-        /* Basic CSS styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        
-        header {
-            background: #2c3e50;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        
-        nav {
-            background: #34495e;
-            padding: 0.5rem;
-        }
-        
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        
-        nav ul li {
-            margin: 0 1rem;
-        }
-        
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        
-        .container {
-            width: 80%;
-            margin: auto;
+        /* Dynamic Header Container */
+        .fusion-header {
+            position: relative;
+            width: 100%;
+            height: 40vh; /* Responsive height */
+            min-height: 300px;
+            max-height: 500px;
             overflow: hidden;
-            padding: 2rem 0;
+            border-bottom: 5px solid #BF0A30; /* Canada red */
         }
-        
-        .main {
-            float: left;
-            width: 70%;
-            padding-right: 2rem;
-            box-sizing: border-box;
+
+        /* Layered Background Images */
+        .fusion-header::before,
+        .fusion-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
         }
-        
-        aside {
-            float: right;
-            width: 30%;
-            background: #ecf0f1;
-            padding: 1rem;
-            box-sizing: border-box;
+
+        /* Bhutan Side (Left) */
+        .fusion-header::before {
+            left: 0;
+            background-image: url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            /* Tiger's Nest Monastery */
         }
-        
-        footer {
-            background: #2c3e50;
-            color: #fff;
+
+        /* Canada Side (Right) */
+        .fusion-header::after {
+            right: 0;
+            background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebd29?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            /* Bay of Fundy */
+        }
+
+        /* Blending Gradient Overlay */
+        .fusion-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg, 
+                rgba(255, 215, 0, 0.3) 0%, /* Bhutan gold */
+                rgba(255, 215, 0, 0) 50%, 
+                rgba(255, 0, 0, 0) 50%, 
+                rgba(255, 0, 0, 0.3) 100% /* Canada red */
+            );
+        }
+
+        /* Central Content */
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            padding: 1rem 0;
-            clear: both;
+            z-index: 2;
+            width: 80%;
         }
-        
-        .post {
-            background: #fff;
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        .header-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            margin-bottom: 0.5rem;
         }
-        
-        .post h2 {
-            margin-top: 0;
+
+        .header-subtitle {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: white;
+            background: rgba(0,0,0,0.5);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
         }
-        
-        .post-meta {
-            color: #7f8c8d;
-            font-size: 0.9rem;
+
+        /* Bhutan Prayer Flags Animation */
+        .prayer-flags {
+            position: absolute;
+            top: 20px;
+            right: 5%;
+            height: 30%;
+            z-index: 3;
+            animation: wave 4s ease-in-out infinite alternate;
         }
-        
+
+        /* Maple Leaf Decoration */
+        .maple-leaf {
+            position: absolute;
+            bottom: 20px;
+            left: 5%;
+            font-size: clamp(2rem, 4vw, 3rem);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Animations */
+        @keyframes wave {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .main, aside {
+            .fusion-header::before,
+            .fusion-header::after {
                 width: 100%;
-                float: none;
-                padding-right: 0;
+                opacity: 0.7;
+            }
+            .fusion-header::after {
+                opacity: 0.5;
+            }
+            .prayer-flags {
+                height: 20%;
+                right: 10px;
             }
         }
     </style>
+</head>
+<body>
+    <!-- Dynamic Fusion Header -->
+    <header class="fusion-header">
+        <!-- Bhutan-Canada Visual Fusion -->
+        <div class="fusion-overlay"></div>
+        
+        <!-- Animated Elements -->
+        <img src="https://cdn-icons-png.flaticon.com/512/566/566828.png" alt="Bhutanese Prayer Flags" class="prayer-flags">
+        <div class="maple-leaf">🍁</div>
+        
+        <!-- Header Content -->
+        <div class="header-content">
+            <h1 class="header-title">Kinga Gyeltshen</h1>
+            <p class="header-subtitle">Bhutanese Engineer in Atlantic Canada</p>
+        </div>
+    </header>
     <header>
         <h1>My Personal Blog</h1>
         <p>"Druk to Fredericton: Engineering a Life Where Prayer Flags Meet Maple Leaves"</p>
