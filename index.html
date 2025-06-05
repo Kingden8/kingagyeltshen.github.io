@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinga Gyeltshen's Personal Blog</title>
     <style>
-        /* ===== New Header Image Styles ===== */
+        /* ===== Header Image Styles ===== */
         .header-image-container {
             width: 100%;
             height: 400px;
@@ -22,12 +21,6 @@
             object-position: center 30%;
         }
 
-        header {
-            margin-top: -5px;
-            position: relative;
-            z-index: 2;
-        }
-       
         /* Basic CSS styling */
         body {
             font-family: 'Arial', sans-serif;
@@ -39,6 +32,9 @@
         }
         
         header {
+            margin-top: -5px;
+            position: relative;
+            z-index: 2;
             background: #2c3e50;
             color: #fff;
             padding: 0.15rem 0;
@@ -150,6 +146,15 @@
             border-radius: 3px;
             margin-right: 5px;
         }
+        
+        /* Home page specific styles */
+        .welcome-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -171,32 +176,125 @@
         </ul>
     </nav>
     
+    <!-- Home Content (separate from blog posts) -->
     <div id="home" class="tab-content active">
         <div class="container">
-            <h1>Where the Himalayas Meet the Maritimes</h1>
-            <p>Welcome to my corner of the internet! I'm <strong>Kinga Gyeltshen</strong>...</p>
-            <p>—an electrical engineer by profession, a storyteller by passion, and a proud Bhutanese-Canadian navigating life in Fredericton's vibrant landscapes.</p>
-            <p>This blog traces my journey:</p>
-            <p>⚡ From Bhutan's mountain monasteries to UNB's research labs</p>
-            <p>🍁 Building a career in Atlantic Canada's tech sector</p>
-            <p>👨‍👩‍👧‍👦 Raising a family where prayer flags flutter alongside maple leaves</p>
-            <p>Expect:</p>
-            <p>Engineering insights from thesis to industry</p>
-            <p>Immigrant reflections on finding home abroad</p>
-            <p>Atlantic adventures—hiking Fundy, savoring momo-poutine fusions</p>
-            <p>"Gross National Happiness meets Maritime resilience—come explore this unexpected blend with me!"</p>
+            <div class="welcome-content">
+                <h1>Where the Himalayas Meet the Maritimes</h1>
+                <p>Welcome to my corner of the internet! I'm <strong>Kinga Gyeltshen</strong>...</p>
+                <p>—an electrical engineer by profession, a storyteller by passion, and a proud Bhutanese-Canadian navigating life in Fredericton's vibrant landscapes.</p>
+                <p>This blog traces my journey:</p>
+                <p>⚡ From Bhutan's mountain monasteries to UNB's research labs</p>
+                <p>🍁 Building a career in Atlantic Canada's tech sector</p>
+                <p>👨‍👩‍👧‍👦 Raising a family where prayer flags flutter alongside maple leaves</p>
+                <p>Expect:</p>
+                <p>Engineering insights from thesis to industry</p>
+                <p>Immigrant reflections on finding home abroad</p>
+                <p>Atlantic adventures—hiking Fundy, savoring momo-poutine fusions</p>
+                <p>"Gross National Happiness meets Maritime resilience—come explore this unexpected blend with me!"</p>
+            </div>
         </div>
     </div>
     
+    <!-- Blog Content -->
+    <div id="blog" class="tab-content">
+        <div class="container">
+            <main class="main">
+                <article class="post">
+                    <h2>My First Blog Post</h2>
+                    <p class="post-meta">Posted on May 31, 2025 by Admin</p>
+                    <p>"Hello! I'm Kinga Gyeltshen – an electrical engineer by training, a researcher by curiosity, and a Bhutanese-Canadian at heart. This blog traces my journey from Bhutan to Fredericton, where I pursued a Master's at UNB, launched my career, and now raise my family amidst New Brunswick's tides and trails. Expect reflections on engineering, immigrant life, and the unexpected joys of finding home where maple trees meet mountain memories. Welcome to my corner of the internet!"</p>
+                    <a href="#">Read More</a>
+                </article>
+                
+                <article class="post">
+                    <h2>My Journey to Fredericton: Education, Career, and Family Life</h2>
+                    <p class="post-meta">Posted on <time datetime="2025-05-31">May 31, 2025</time> by Kinga Gyeltshen</p>
+                    
+                    <img src="fredericton-skyline.jpg" alt="Fredericton, New Brunswick" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
+                    
+                    <h3>From Bhutan to Atlantic Canada</h3>
+                    <p>My journey brought me from Bhutan to Fredericton, New Brunswick, where I came to pursue a Master's program at the <strong>University of New Brunswick</strong>. As a research-based student in Electrical Engineering, I found both academic challenges and incredible opportunities in this welcoming Canadian city.</p>
+                    
+                    <h3>Academic Achievement and Career Transition</h3>
+                    <p>After successfully completing my program, I joined the workforce in the last quarter of 2022. Fredericton has proven to be an excellent place for professional growth in the engineering field, with its growing tech sector and research opportunities.</p>
+                    
+                    <h3>Family Life in Atlantic Canada</h3>
+                    <p>What makes Fredericton truly special is what it has offered to my family:</p>
+                    <ul>
+                        <li>A safe, welcoming community to raise children</li>
+                        <li>Beautiful natural surroundings perfect for family activities</li>
+                        <li>Four distinct seasons that each bring their own charm</li>
+                    </ul>
+                    
+                    <blockquote><i>"The Atlantic Canadian lifestyle has given us the perfect balance between career opportunities and quality family time."</i></blockquote>
+                    
+                    <h3>Exploring The Beautiful Region</h3>
+                    <p>From the vibrant festivals of Fredericton to the dramatic tides of the Bay of Fundy, our summers are filled with adventures that blend culture and nature. On land, we hike through Odell Park's lush trails and step into history at Kings Landing. By the ocean, we marvel at Hopewell Rocks' flowerpot formations and breathe in the salty air of Saint Andrews. Each destination—whether Fundy National Park's waterfalls or the soulful rhythms of the Harvest Jazz & Blues Festival—reveals why Atlantic Canada's beauty captivates our family year after year.</p>
+                    
+                    <img src="family-outing.JPG" alt="Family exploring Atlantic Canada" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
+                    
+                    <h3>Why We Chose to Stay</h3>
+                    <p>Fredericton offers the perfect combination of:</p>
+                    <ol>
+                        <li>Career opportunities in engineering and technology</li>
+                        <li>Excellent education system for our children</li>
+                        <li>Affordable quality of life</li>
+                        <li>Natural beauty right at our doorstep</li>
+                    </ol>
+                    
+                    <p>As we continue our Canadian journey, we're grateful for the warm welcome we've received and look forward to many more years in this special part of the country.</p>
+                    
+                    <div class="tags">
+                        <span>Tags: </span>
+                        <a href="#">Immigration Experience</a>, 
+                        <a href="#">Fredericton</a>, 
+                        <a href="#">Engineering Career</a>, 
+                        <a href="#">Family Life</a>
+                    </div>
+                </article>
+            </main>
+            
+            <aside>
+                <div class="about">
+                    <h3>About Me</h3>
+                    <img src="profile.jpg" alt="Profile Picture" style="width:100%; max-width:200px; border-radius:50%;">
+                    <p><strong>Electrical Engineer | UNB Researcher | Bhutanese-Canadian Explorer</strong></p>
+                    <p>Born in the Himalayan kingdom of Bhutan and now rooted in New Brunswick's vibrant landscapes, I bridge worlds through engineering and storytelling. After completing my Master's in Electrical Engineering at the University of New Brunswick, I transitioned into the Canadian workforce in late 2022—where I now solve technical challenges by day and chase coastal adventures with my family by weekend.</p>
+                    <p>This blog chronicles:</p>
+                    <ul>
+                        <li>🔌 <strong>Engineering Insights:</strong> From thesis research to industry applications</li>
+                        <li>🌊 <strong>Atlantic Living:</strong> Why Fredericton stole our hearts</li>
+                        <li>🏔️ <strong>Cultural Threads:</strong> Blazing momos with maple syrup, and other Bhutan-Canada fusions</li>
+                    </ul>
+                    <p>When not debugging circuits, you'll find me hiking Fundy's trails, introducing my kids to Bhutanese folklore, or perfecting the art of snowshoeing (a skill no Himalayan native expects to need!).</p>
+                    <p>"Gross National Happiness meets Maritime resilience—this is my unexpected, wonderful life at 45°N."</p>
+                </div>
+                
+                <div class="categories">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="#">Travel</a></li>
+                        <li><a href="#">Food</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                    </ul>
+                </div>
+                
+                <div class="social">
+                    <h3>Connect With Me</h3>
+                    <a href="#">Facebook</a> |
+                    <a href="#">Instagram</a> |
+                    <a href="https://www.linkedin.com/in/kinga-gyeltshen-msc-ab900951" target="_blank">LinkedIn</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+    
+    <!-- Other Tab Contents -->
     <div id="about" class="tab-content">
         <div class="container">
             <!-- About content -->
-        </div>
-    </div>
-    
-    <div id="blog" class="tab-content">
-        <div class="container">
-            <!-- Blog content -->
         </div>
     </div>
     
@@ -210,98 +308,6 @@
         <div class="container">
             <!-- Contact content -->
         </div>
-    </div>
-    
-    <div class="container">
-        <main class="main">
-            <article class="post">
-                <h2>My First Blog Post</h2>
-                <p class="post-meta">Posted on May 31, 2025 by Admin</p>
-                <p>"Hello! I'm Kinga Gyeltshen – an electrical engineer by training, a researcher by curiosity, and a Bhutanese-Canadian at heart. This blog traces my journey from Bhutan to Fredericton, where I pursued a Master's at UNB, launched my career, and now raise my family amidst New Brunswick's tides and trails. Expect reflections on engineering, immigrant life, and the unexpected joys of finding home where maple trees meet mountain memories. Welcome to my corner of the internet!"</p>
-                <a href="#">Read More</a>
-            </article>
-            
-            <article class="post">
-                <h2>My Journey to Fredericton: Education, Career, and Family Life</h2>
-                <p class="post-meta">Posted on <time datetime="2025-05-31">May 31, 2025</time> by Kinga Gyeltshen</p>
-                
-                <img src="fredericton-skyline.jpg" alt="Fredericton, New Brunswick" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
-                
-                <h3>From Bhutan to Atlantic Canada</h3>
-                <p>My journey brought me from Bhutan to Fredericton, New Brunswick, where I came to pursue a Master's program at the <strong>University of New Brunswick</strong>. As a research-based student in Electrical Engineering, I found both academic challenges and incredible opportunities in this welcoming Canadian city.</p>
-                
-                <h3>Academic Achievement and Career Transition</h3>
-                <p>After successfully completing my program, I joined the workforce in the last quarter of 2022. Fredericton has proven to be an excellent place for professional growth in the engineering field, with its growing tech sector and research opportunities.</p>
-                
-                <h3>Family Life in Atlantic Canada</h3>
-                <p>What makes Fredericton truly special is what it has offered to my family:</p>
-                <ul>
-                    <li>A safe, welcoming community to raise children</li>
-                    <li>Beautiful natural surroundings perfect for family activities</li>
-                    <li>Four distinct seasons that each bring their own charm</li>
-                </ul>
-                
-                <blockquote><i>"The Atlantic Canadian lifestyle has given us the perfect balance between career opportunities and quality family time."</i></blockquote>
-                
-                <h3>Exploring The Beautiful Region</h3>
-                <p>From the vibrant festivals of Fredericton to the dramatic tides of the Bay of Fundy, our summers are filled with adventures that blend culture and nature. On land, we hike through Odell Park's lush trails and step into history at Kings Landing. By the ocean, we marvel at Hopewell Rocks' flowerpot formations and breathe in the salty air of Saint Andrews. Each destination—whether Fundy National Park's waterfalls or the soulful rhythms of the Harvest Jazz & Blues Festival—reveals why Atlantic Canada's beauty captivates our family year after year.</p>
-                
-                <img src="family-outing.JPG" alt="Family exploring Atlantic Canada" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
-                
-                <h3>Why We Chose to Stay</h3>
-                <p>Fredericton offers the perfect combination of:</p>
-                <ol>
-                    <li>Career opportunities in engineering and technology</li>
-                    <li>Excellent education system for our children</li>
-                    <li>Affordable quality of life</li>
-                    <li>Natural beauty right at our doorstep</li>
-                </ol>
-                
-                <p>As we continue our Canadian journey, we're grateful for the warm welcome we've received and look forward to many more years in this special part of the country.</p>
-                
-                <div class="tags">
-                    <span>Tags: </span>
-                    <a href="#">Immigration Experience</a>, 
-                    <a href="#">Fredericton</a>, 
-                    <a href="#">Engineering Career</a>, 
-                    <a href="#">Family Life</a>
-                </div>
-            </article>
-        </main>
-        
-        <aside>
-            <div class="about">
-                <h3>About Me</h3>
-                <img src="profile.jpg" alt="Profile Picture" style="width:100%; max-width:200px; border-radius:50%;">
-                <p><strong>Electrical Engineer | UNB Researcher | Bhutanese-Canadian Explorer</strong></p>
-                <p>Born in the Himalayan kingdom of Bhutan and now rooted in New Brunswick's vibrant landscapes, I bridge worlds through engineering and storytelling. After completing my Master's in Electrical Engineering at the University of New Brunswick, I transitioned into the Canadian workforce in late 2022—where I now solve technical challenges by day and chase coastal adventures with my family by weekend.</p>
-                <p>This blog chronicles:</p>
-                <ul>
-                    <li>🔌 <strong>Engineering Insights:</strong> From thesis research to industry applications</li>
-                    <li>🌊 <strong>Atlantic Living:</strong> Why Fredericton stole our hearts</li>
-                    <li>🏔️ <strong>Cultural Threads:</strong> Blazing momos with maple syrup, and other Bhutan-Canada fusions</li>
-                </ul>
-                <p>When not debugging circuits, you'll find me hiking Fundy's trails, introducing my kids to Bhutanese folklore, or perfecting the art of snowshoeing (a skill no Himalayan native expects to need!).</p>
-                <p>"Gross National Happiness meets Maritime resilience—this is my unexpected, wonderful life at 45°N."</p>
-            </div>
-            
-            <div class="categories">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="technology.html">Technology</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Food</a></li>
-                    <li><a href="#">Lifestyle</a></li>
-                </ul>
-            </div>
-            
-            <div class="social">
-                <h3>Connect With Me</h3>
-                <a href="#">Facebook</a> |
-                <a href="#">Instagram</a> |
-                <a href="https://www.linkedin.com/in/kinga-gyeltshen-msc-ab900951" target="_blank">LinkedIn</a>
-            </div>
-        </aside>
     </div>
     
     <footer>
