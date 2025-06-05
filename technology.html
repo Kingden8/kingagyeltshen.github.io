@@ -4,9 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology - Kinga Gyeltshen's Blog</title>
-    <!-- Copy the same CSS from your index.html -->
     <style>
-        /* Paste all your CSS from index.html here */
+        /* Paste all your CSS from index.html */
+        /* ===== Header Image Styles ===== */
+        .header-image-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 3px solid #BF0A30;
+        }
+
+        .main-header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        /* Body Margins (Added from index.html) */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0 10px; /* THIS IS THE MARGIN YOU WANTED */
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            margin-top: -5px;
+            position: relative;
+            z-index: 2;
+            background: #2c3e50;
+            color: #fff;
+            padding: 0.15rem 0;
+            text-align: center;
+            height: auto;
+            min-height: 80px;
+        }
+        
+        /* Rest of your CSS from index.html */
+        nav {
+            background: #34495e;
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+        
+        .main {
+            float: left;
+            width: 70%;
+            padding-right: 2rem;
+            box-sizing: border-box;
+        }
+        
+        aside {
+            float: right;
+            width: 30%;
+            background: #ecf0f1;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            clear: both;
+        }
+        
+        .post {
+            background: #fff;
+            margin-bottom: 2rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .post h2 {
+            margin-top: 0;
+        }
+        
+        .post-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main, aside {
+                width: 100%;
+                float: none;
+                padding-right: 0;
+            }
+        }
+        
+        .tags a {
+            background: #ecf0f1;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -61,10 +185,13 @@
         </main>
         
         <aside>
-            <!-- Copy the same sidebar from index.html -->
             <div class="about">
-                <!-- ... -->
+                <h3>About Me</h3>
+                <img src="profile.jpg" alt="Profile Picture" style="width:100%; max-width:200px; border-radius:50%;">
+                <p><strong>Electrical Engineer | UNB Researcher | Bhutanese-Canadian Explorer</strong></p>
+                <p>Born in the Himalayan kingdom of Bhutan and now rooted in New Brunswick's vibrant landscapes, I bridge worlds through engineering and storytelling.</p>
             </div>
+            
             <div class="categories">
                 <h3>Categories</h3>
                 <ul>
@@ -74,8 +201,12 @@
                     <li><a href="#">Lifestyle</a></li>
                 </ul>
             </div>
+            
             <div class="social">
-                <!-- ... -->
+                <h3>Connect With Me</h3>
+                <a href="#">Facebook</a> |
+                <a href="#">Instagram</a> |
+                <a href="https://www.linkedin.com/in/kinga-gyeltshen-msc-ab900951" target="_blank">LinkedIn</a>
             </div>
         </aside>
     </div>
