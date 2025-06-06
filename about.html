@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Kinga Gyeltshen | Bhutanese-Canadian Engineer</title>
+    <style>
+        /* Copy ALL your CSS from index.html here */
+        /* [Paste your entire style section from index.html] */
+        
+        /* Additional about-page specific styles */
+        .about-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('bhutan-canada-bridge.jpg');
+            background-size: cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        .timeline-item {
+            padding-left: 50px;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #BF0A30;
+        }
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2c3e50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-image-container">
+        <img src="about-header.jpg" alt="Kinga's Journey" class="main-header-image">
+    </div>
+    
+    <header class="about-header">
+        <h1>My Journey</h1>
+        <p><em>From Bhutan's Peaks to Canada's Shores</em></p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <article class="post">
+            <!-- [Copy the same About content from index.html here] -->
+            
+            <!-- Additional timeline section for standalone about page -->
+            <h3>My Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2005</div>
+                    <h4>Bachelor's in Electrical Engineering, Bhutan</h4>
+                    <p>Started my technical journey at [University Name] in Bhutan.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020</div>
+                    <h4>Moved to Canada</h4>
+                    <p>Began Master's program at University of New Brunswick.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <h4>Joined Canadian Workforce</h4>
+                    <p>Started working with utility systems and AspenTech solutions.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <h4>Launched This Blog</h4>
+                    <p>Began documenting my technical and cultural journey.</p>
+                </div>
+            </div>
+        </article>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Kinga Gyeltshen. All rights reserved.</p>
+    </footer>
+</body>
+</html>
