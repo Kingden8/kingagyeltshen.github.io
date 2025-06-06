@@ -3,390 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kinga Gyeltshen's Personal Blog</title>
+    <title>Kinga Gyeltshen - Electrical Engineer & Cultural Bridge Builder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* ===== Header Image Styles ===== */
-        .header-image-container {
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-            border-bottom: 3px solid #BF0A30;
+        /* Additional styles for enhanced navigation */
+        .navbar {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
-        .main-header-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-        }
-
-        /* Basic CSS styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0 10px;
-            padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        
-        header {
-            margin-top: -5px;
-            position: relative;
-            z-index: 2;
-            background: #2c3e50;
+        .nav-links a {
             color: #fff;
-            padding: 0.15rem 0;
-            text-align: center;
-            height: auto;
-            min-height: 80px;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
-        
-        nav {
-            background: #34495e;
-            padding: 0.5rem;
-        }
-        
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        
-        nav ul li {
-            margin: 0 1rem;
-        }
-        
-        nav ul li a {
-            color: #fff;
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
             text-decoration: none;
         }
-        
-        nav ul li a:hover {
-            text-decoration: underline;
+        .nav-links a.active {
+            background-color: #007bff;
         }
-        
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 2rem 0;
+        .hero {
+            background: url('himalayan-bg.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
         }
-        
-        .main {
-            float: left;
-            width: 70%;
-            padding-right: 2rem;
-            box-sizing: border-box;
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
         }
-        
-        aside {
-            float: right;
-            width: 30%;
-            background: #ecf0f1;
-            padding: 1rem;
-            box-sizing: border-box;
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
         }
-        
-        footer {
-            background: #2c3e50;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            clear: both;
+        .btn-about {
+            background-color: #ff6b6b;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
         }
-        
-        .post {
-            background: #fff;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .post h2 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-        
-        .post-meta {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .main, aside {
-                width: 100%;
-                float: none;
-                padding-right: 0;
-            }
-        }
-        
-        /* Tab styles */
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        
-        .tags a {
-            background: #ecf0f1;
-            padding: 3px 8px;
-            border-radius: 3px;
-            margin-right: 5px;
-            font-size: 0.8rem;
-        }
-        
-        /* Home page specific styles */
-        .welcome-content {
-            background: #fff;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .featured-posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .post-preview {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-        
-        .post-preview:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .btn-about:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
-   <div class="header-image-container">
-    <img src="header-image.jpg" alt="Bhutan-Canada" class="main-header-image">
-   </div>
-    <header>
-        <h1>My Personal Blog</h1>
-        <p><em>"Druk to Fredericton: Engineering a Life Where Prayer Flags Meet Maple Leaves"</em></p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#" class="tab-link" data-tab="home">Home</a></li>
-            <li><a href="#" class="tab-link" data-tab="blog">Blog</a></li>
-            <li><a href="#" class="tab-link" data-tab="about">About</a></li>
-            <li><a href="#" class="tab-link" data-tab="portfolio">Portfolio</a></li>
-            <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <!-- HOME TAB CONTENT -->
-    <div id="home" class="tab-content active">
-        <div class="container">
-            <div class="welcome-content">
-                <h1>Where the Himalayas Meet the Maritimes</h1>
-                <p>Welcome to my corner of the internet! I'm <strong>Kinga Gyeltshen</strong> - an electrical engineer by profession, a storyteller by passion, and a proud Bhutanese-Canadian navigating life in Fredericton's vibrant landscapes.</p>
-                
-                <div class="featured-posts">
-                    <article class="post-preview">
-                        <h3><a href="#blog" class="tab-link" data-tab="blog">My Engineering Journey</a></h3>
-                        <p>From Bhutan's mountain monasteries to UNB's research labs, follow my path through electrical engineering and utility system innovation.</p>
-                    </article>
-                    
-                    <article class="post-preview">
-                        <h3><a href="#blog" class="tab-link" data-tab="blog">Cultural Fusion</a></h3>
-                        <p>Discover how Gross National Happiness meets Maritime resilience in my family's Canadian journey.</p>
-                    </article>
-                    
-                    <article class="post-preview">
-                        <h3><a href="technology.html">Technology Projects</a></h3>
-                        <p>Explore my work with AspenTech Monarch and utility system supervision.</p>
-                    </article>
+    <!-- Header with Enhanced Navigation -->
+    <header class="header">
+        <div class="navbar">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>Kinga Gyeltshen</h1>
+                        <p class="tagline">Electrical Engineer | Researcher | Cultural Ambassador</p>
+                    </div>
+                    <nav>
+                        <ul class="nav-links">
+                            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                            <li><a href="technology.html"><i class="fas fa-microchip"></i> Technology</a></li>
+                            <li><a href="culture.html"><i class="fas fa-globe-asia"></i> Culture</a></li>
+                            <li><a href="#contact" class="tab-link" data-tab="contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                
-                <h2>Recent Updates</h2>
-                <ul>
-                    <li>🔌 New article on SCADA systems coming soon</li>
-                    <li>🍁 Fall hiking adventures in Fundy National Park</li>
-                    <li>📚 Working on a memoir about cultural adaptation</li>
-                </ul>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- BLOG TAB CONTENT -->
-    <div id="blog" class="tab-content">
+    <!-- Hero Section with About CTA -->
+    <section class="hero">
         <div class="container">
-            <main class="main">
-                <article class="post">
-                    <h2>My First Blog Post</h2>
-                    <p class="post-meta">Posted on May 31, 2025 by Admin</p>
-                    <p>"Hello! I'm Kinga Gyeltshen – an electrical engineer by training, a researcher by curiosity, and a Bhutanese-Canadian at heart. This blog traces my journey from Bhutan to Fredericton, where I pursued a Master's at UNB, launched my career, and now raise my family amidst New Brunswick's tides and trails. Expect reflections on engineering, immigrant life, and the unexpected joys of finding home where maple trees meet mountain memories. Welcome to my corner of the internet!"</p>
-                    <a href="#">Read More</a>
-                </article>
-                
-                <article class="post">
-                    <h2>My Journey to Fredericton: Education, Career, and Family Life</h2>
-                    <p class="post-meta">Posted on <time datetime="2025-05-31">May 31, 2025</time> by Kinga Gyeltshen</p>
-                    
-                    <img src="fredericton-skyline.jpg" alt="Fredericton, New Brunswick" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
-                    
-                    <h3>From Bhutan to Atlantic Canada</h3>
-                    <p>My journey brought me from Bhutan to Fredericton, New Brunswick, where I came to pursue a Master's program at the <strong>University of New Brunswick</strong>. As a research-based student in Electrical Engineering, I found both academic challenges and incredible opportunities in this welcoming Canadian city.</p>
-                    
-                    <h3>Academic Achievement and Career Transition</h3>
-                    <p>After successfully completing my program, I joined the workforce in the last quarter of 2022. Fredericton has proven to be an excellent place for professional growth in the engineering field, with its growing tech sector and research opportunities.</p>
-                    
-                    <h3>Family Life in Atlantic Canada</h3>
-                    <p>What makes Fredericton truly special is what it has offered to my family:</p>
-                    <ul>
-                        <li>A safe, welcoming community to raise children</li>
-                        <li>Beautiful natural surroundings perfect for family activities</li>
-                        <li>Four distinct seasons that each bring their own charm</li>
-                    </ul>
-                    
-                    <blockquote><i>"The Atlantic Canadian lifestyle has given us the perfect balance between career opportunities and quality family time."</i></blockquote>
-                    
-                    <h3>Exploring The Beautiful Region</h3>
-                    <p>From the vibrant festivals of Fredericton to the dramatic tides of the Bay of Fundy, our summers are filled with adventures that blend culture and nature. On land, we hike through Odell Park's lush trails and step into history at Kings Landing. By the ocean, we marvel at Hopewell Rocks' flowerpot formations and breathe in the salty air of Saint Andrews. Each destination—whether Fundy National Park's waterfalls or the soulful rhythms of the Harvest Jazz & Blues Festival—reveals why Atlantic Canada's beauty captivates our family year after year.</p>
-                    
-                    <img src="family-outing.JPG" alt="Family exploring Atlantic Canada" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
-                    
-                    <h3>Why We Chose to Stay</h3>
-                    <p>Fredericton offers the perfect combination of:</p>
-                    <ol>
-                        <li>Career opportunities in engineering and technology</li>
-                        <li>Excellent education system for our children</li>
-                        <li>Affordable quality of life</li>
-                        <li>Natural beauty right at our doorstep</li>
-                    </ol>
-                    
-                    <p>As we continue our Canadian journey, we're grateful for the warm welcome we've received and look forward to many more years in this special part of the country.</p>
-                    
-                    <div class="tags">
-                        <span>Tags: </span>
-                        <a href="#">Immigration Experience</a>, 
-                        <a href="#">Fredericton</a>, 
-                        <a href="#">Engineering Career</a>, 
-                        <a href="#">Family Life</a>
+            <div class="hero-content">
+                <h2>Bridging Engineering Excellence and Cultural Wisdom</h2>
+                <p class="lead">From the Himalayan peaks of Bhutan to the innovation hubs of Atlantic Canada, I bring a unique perspective to electrical engineering and cross-cultural collaboration.</p>
+                <a href="about.html" class="btn btn-about"><i class="fas fa-book-open"></i> Explore My Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Featured Categories -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>My Focus Areas</h2>
+                    <p>Integrating technical expertise with cultural understanding</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3><a href="technology.html">Power Systems Engineering</a></h3>
+                        <p>Specializing in utility systems, SCADA, and power optimization for Atlantic Canada's energy grid</p>
+                        <a href="technology.html" class="category-link">View Projects <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </article>
-            </main>
-            
-            <aside>
-                <div class="about">
-                    <h3>About Me</h3>
-                    <img src="profile.jpg" alt="Profile Picture" style="width:100%; max-width:200px; border-radius:50%;">
-                    <p><strong>Electrical Engineer | UNB Researcher | Bhutanese-Canadian Explorer</strong></p>
-                    <p>Born in the Himalayan kingdom of Bhutan and now rooted in New Brunswick's vibrant landscapes, I bridge worlds through engineering and storytelling. After completing my Master's in Electrical Engineering at the University of New Brunswick, I transitioned into the Canadian workforce in late 2022—where I now solve technical challenges by day and chase coastal adventures with my family by weekend.</p>
-                    <p>This blog chronicles:</p>
-                    <ul>
-                        <li>🔌 <strong>Engineering Insights:</strong> From thesis research to industry applications</li>
-                        <li>🌊 <strong>Atlantic Living:</strong> Why Fredericton stole our hearts</li>
-                        <li>🏔️ <strong>Cultural Threads:</strong> Blazing momos with maple syrup, and other Bhutan-Canada fusions</li>
-                    </ul>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3><a href="about.html#education">Academic Research</a></h3>
+                        <p>MSc work at UNB focusing on innovative approaches to electrical infrastructure challenges</p>
+                        <a href="about.html#education" class="category-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3><a href="culture.html">Cultural Bridge Building</a></h3>
+                        <p>Connecting Bhutanese traditions with Canadian multiculturalism through community initiatives</p>
+                        <a href="culture.html" class="category-link">Read Stories <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                
-                <div class="categories">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="technology.html">Technology</a></li>
-                        <li><a href="#">Travel</a></li>
-                        <li><a href="#">Food</a></li>
-                        <li><a href="#">Lifestyle</a></li>
-                    </ul>
-                </div>
-                
-                <div class="social">
-                    <h3>Connect With Me</h3>
-                    <a href="#">Facebook</a> |
-                    <a href="#">Instagram</a> |
-                    <a href="https://www.linkedin.com/in/kinga-gyeltshen-msc-ab900951" target="_blank">LinkedIn</a>
-                </div>
-            </aside>
-        </div>
-    </div>
+            </div>
+        </section>
 
-    <!-- OTHER TABS (About, Portfolio, Contact) -->
-    <div id="about" class="tab-content">
+        <!-- Recent Articles Section -->
+        <section class="recent-articles">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Latest Writings</h2>
+                    <p>Insights from my professional and personal journey</p>
+                </div>
+                <div class="article-grid">
+                    <article class="article-card">
+                        <div class="article-image">
+                            <img src="images/power-grid.jpg" alt="Power Grid Optimization">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Technology</span>
+                            <h3><a href="power-optimization.html">Optimizing Maritime Power Distribution</a></h3>
+                            <p>Technical deep dive into my work improving efficiency in NB Power's grid infrastructure using AspenTech Monarch...</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                                <a href="power-optimization.html" class="read-more">Read Full Article <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-image">
+                            <img src="images/bhutan-canada.jpg" alt="Bhutan and Canada Flags">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Culture</span>
+                            <h3><a href="cultural-transition.html">From Thunder Dragon to Maple Leaf</a></h3>
+                            <p>Personal reflections on adapting to Canadian life while maintaining Bhutanese identity and values...</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-calendar"></i> May 28, 2023</span>
+                                <a href="cultural-transition.html" class="read-more">Read Full Article <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-image">
+                            <img src="images/mentorship.jpg" alt="STEM Mentorship">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Community</span>
+                            <h3><a href="stem-mentorship.html">Mentoring New Canadians in STEM</a></h3>
+                            <p>How I'm working with local organizations to help immigrant engineers navigate the Canadian job market...</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-calendar"></i> April 12, 2023</span>
+                                <a href="stem-mentorship.html" class="read-more">Read Full Article <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="view-all">
+                    <a href="articles.html" class="btn btn-outline">View All Articles</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Highlights -->
+        <section class="highlights">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Professional Highlights</h2>
+                    <p>Key achievements and ongoing projects</p>
+                </div>
+                <div class="highlight-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Senior Electrical Engineer</h3>
+                            <p>Leading power system optimization projects for utility clients across Atlantic Canada</p>
+                            <a href="about.html#experience" class="timeline-link">More about my work <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <div class="timeline-content">
+                            <h3>Research Assistant, UNB</h3>
+                            <p>Conducted groundbreaking research on renewable energy integration in maritime climates</p>
+                            <a href="about.html#research" class="timeline-link">Research details <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019</div>
+                        <div class="timeline-content">
+                            <h3>MSc Electrical Engineering</h3>
+                            <p>Graduated with honors from University of New Brunswick</p>
+                            <a href="about.html#education" class="timeline-link">Academic journey <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section id="contact" class="tab-content contact-section">
         <div class="container">
-            <!-- About content would go here -->
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Let's Connect</h2>
+                    <p>I'm always interested in discussing engineering projects, cultural exchanges, or potential collaborations.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>kinga.g@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Fredericton, New Brunswick, Canada</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (506) XXX-XXXX</span>
+                        </div>
+                    </div>
+                    <div class="social-profiles">
+                        <a href="https://www.linkedin.com/in/kinga-gyeltshen-msc-ab900951" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/kinga-g" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/kinga_engineer" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <div id="portfolio" class="tab-content">
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <!-- Portfolio content would go here -->
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Kinga Gyeltshen</h3>
+                    <p>Electrical engineer bridging Bhutanese heritage and Canadian innovation through technology and cultural exchange.</p>
+                    <a href="about.html" class="footer-link">More about me →</a>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="technology.html">Technology Projects</a></li>
+                        <li><a href="culture.html">Cultural Writings</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to receive updates on my latest articles and projects.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kinga Gyeltshen. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <div id="contact" class="tab-content">
-        <div class="container">
-            <!-- Contact content would go here -->
-        </div>
-    </div>
-    
-    <footer>
-        <p>&copy; 2025 My Personal Blog. All rights reserved.</p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tab switching functionality
-            const tabLinks = document.querySelectorAll('.tab-link');
-            
-            tabLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const tabId = this.getAttribute('data-tab');
-                    
-                    // Hide all tabs
-                    document.querySelectorAll('.tab-content').forEach(tab => {
-                        tab.classList.remove('active');
-                    });
-                    
-                    // Show selected tab
-                    document.getElementById(tabId).classList.add('active');
-                    
-                    // Update URL without reloading
-                    history.pushState(null, null, '#' + tabId);
-                    
-                    // Scroll to top smoothly
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
+        // Enhanced Tab Switching
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tabId = this.getAttribute('data-tab');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.style.display = 'none';
                 });
+                
+                // Show selected tab
+                document.getElementById(tabId).style.display = 'block';
+                
+                // Smooth scroll to tab
+                window.scrollTo({
+                    top: document.getElementById(tabId).offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-links a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
             });
+        });
+
+        // Contact Form Handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Check URL hash on load
-            if(window.location.hash) {
-                const tabId = window.location.hash.substring(1);
-                const tabLink = document.querySelector(`.tab-link[data-tab="${tabId}"]`);
-                if(tabLink) {
-                    tabLink.click();
-                }
+            // Form validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (name && email && message) {
+                // Here you would typically send the form data to a server
+                alert('Thank you for your message, ' + name + '! I will get back to you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all required fields.');
             }
         });
-        
-        // Handle back/forward navigation
-        window.addEventListener('popstate', function() {
-            if(window.location.hash) {
-                const tabId = window.location.hash.substring(1);
-                const tabLink = document.querySelector(`.tab-link[data-tab="${tabId}"]`);
-                if(tabLink) {
-                    tabLink.click();
-                }
+
+        // Newsletter Form Handling
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value.trim();
+            
+            if (email) {
+                alert('Thank you for subscribing with ' + email + '!');
+                this.reset();
             }
+        });
+
+        // Set active nav link on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                const linkPage = link.getAttribute('href').split('/').pop();
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
