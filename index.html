@@ -1,76 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinga Gyeltshen's Personal Blog</title>
     <title>Kinga Gyeltshen - Electrical Engineer & Cultural Bridge Builder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Header Styles */
-        .header {
-            background: #2c3e50;
-            color: #fff;
-            padding: 0.15rem 0;
-            text-align: center;
-            height: auto;
-            min-height: 80px;
-        }
-        
-        .navbar {
-            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
-            padding: 1rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-        }
-        
-        .nav-links li {
-            margin: 0 1rem;
-        }
-        
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0.5rem 1.2rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .nav-links a:hover {
-            background-color: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-            text-decoration: none;
-        }
-        
-        .nav-links a.active {
-            background-color: #007bff;
-        }
-        
-        /* Header Image */
+    <link rel="stylesheet" href="styles.css">
+<style>
+        /* ===== Header Image Styles ===== */
         .header-image-container {
             width: 100%;
             height: 400px;
@@ -78,24 +14,162 @@
             position: relative;
             border-bottom: 3px solid #BF0A30;
         }
-        
+
         .main-header-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 30%;
         }
+
+        /* Basic CSS styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0 10px;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        /* Additional styles for enhanced navigation */
+        .navbar {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
         
-        /* Hero Section */
+        header {
+            margin-top: -5px;
+            position: relative;
+            z-index: 2;
+            background: #2c3e50;
+        .nav-links a {
+color: #fff;
+            padding: 0.15rem 0;
+            text-align: center;
+            height: auto;
+            min-height: 80px;
+        }
+        
+        nav {
+            background: #34495e;
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+}
+        
+        nav ul li a {
+            color: #fff;
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+text-decoration: none;
+}
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+        
+        .main {
+            float: left;
+            width: 70%;
+            padding-right: 2rem;
+            box-sizing: border-box;
+        }
+        
+        aside {
+            float: right;
+            width: 30%;
+            background: #ecf0f1;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            clear: both;
+        }
+        
+        .post {
+            background: #fff;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .post h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .post-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main, aside {
+                width: 100%;
+                float: none;
+                padding-right: 0;
+            }
+        }
+        
+        /* Tab styles */
+        .tab-content {
+            display: none;
+        .nav-links a.active {
+            background-color: #007bff;
+}
+        .tab-content.active {
+            display: block;
+        }
+        
+        .tags a {
+            background: #ecf0f1;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-right: 5px;
+            font-size: 0.8rem;
         .hero {
             background: url('himalayan-bg.jpg') no-repeat center center/cover;
             height: 80vh;
             display: flex;
             align-items: center;
             position: relative;
-            margin: 20px 0;
-        }
+}
         
+        /* Home page specific styles */
+        .welcome-content {
+            background: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         .hero::after {
             content: '';
             position: absolute;
@@ -104,16 +178,24 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.5);
-        }
+}
         
+        .featured-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 800px;
-            color: white;
-            padding: 20px;
-        }
+}
         
+        .post-preview {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
         .btn-about {
             background-color: #ff6b6b;
             border: none;
@@ -121,367 +203,25 @@
             font-size: 1.1rem;
             margin-top: 1.5rem;
             transition: all 0.3s ease;
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 4px;
-        }
+}
         
+        .post-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         .btn-about:hover {
             background-color: #ff5252;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        /* Main Content Styles */
-        .main-content {
-            margin: 30px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        /* Category Grid */
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .category-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .category-icon {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        
-        .category-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #2c3e50;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        /* Article Grid */
-        .article-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .article-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .article-image img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .article-content {
-            padding: 20px;
-        }
-        
-        .article-category {
-            display: inline-block;
-            background: #ecf0f1;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-        }
-        
-        .article-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .read-more {
-            color: #2c3e50;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        /* Timeline Styles */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin: 2rem 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #BF0A30;
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #2c3e50;
-            border: 3px solid #BF0A30;
-        }
-        
-        /* Skills List */
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        
-        .skill-tag {
-            background: #2c3e50;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 30px 0;
-        }
-        
-        .contact-info {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin: 15px 0;
-        }
-        
-        .contact-item i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-            color: #2c3e50;
-        }
-        
-        .social-profiles {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-link {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: #2c3e50;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background: #BF0A30;
-            transform: translateY(-3px);
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-        
-        .form-group textarea {
-            min-height: 100px;
-        }
-        
-        .btn-primary {
-            background: #2c3e50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background: #BF0A30;
-        }
-        
-        /* Footer Styles */
-        .footer {
-            background: #2c3e50;
-            color: white;
-            padding: 30px 0;
-            margin-top: 50px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .footer-about h3 {
-            margin-top: 0;
-        }
-        
-        .footer-link {
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .footer-newsletter input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 4px;
-        }
-        
-        .footer-newsletter button {
-            background: #BF0A30;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .legal-links {
-            margin-top: 10px;
-        }
-        
-        .legal-links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        
-        /* Tab Content Styles */
-        .tab-content {
-            display: none;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            margin-top: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .tab-content h3 { 
-            color: #2c3e50; 
-            border-bottom: 2px solid #BF0A30; 
-            padding-bottom: 5px;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .nav-links li {
-                margin: 5px 0;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero {
-                height: 60vh;
-            }
-        }
-    </style>
+}
+</style>
 </head>
 <body>
+   <div class="header-image-container">
+    <img src="header-image.jpg" alt="Bhutan-Canada" class="main-header-image">
+   </div>
+    <header>
+        <h1>My Personal Blog</h1>
+        <p><em>"Druk to Fredericton: Engineering a Life Where Prayer Flags Meet Maple Leaves"</em></p>
     <!-- Header with Enhanced Navigation -->
     <header class="header">
         <div class="navbar">
@@ -495,30 +235,40 @@
                         <ul class="nav-links">
                             <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
                             <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-                            <li><a href="blog.html"><i class="fas fa-book"></i> Blog</a></li>
-                            <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
-                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                            <li><a href="technology.html"><i class="fas fa-microchip"></i> Technology</a></li>
+                            <li><a href="culture.html"><i class="fas fa-globe-asia"></i> Culture</a></li>
+                            <li><a href="#contact" class="tab-link" data-tab="contact"><i class="fas fa-envelope"></i> Contact</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
-    </header>
+</header>
     
-    <div class="header-image-container">
-        <img src="header-image.jpg" alt="Bhutan-Canada" class="main-header-image">
-    </div>
+    <nav>
+        <ul>
+            <li><a href="#" class="tab-link" data-tab="home">Home</a></li>
+            <li><a href="#" class="tab-link" data-tab="blog">Blog</a></li>
+            <li><a href="#" class="tab-link" data-tab="about">About</a></li>
+            <li><a href="#" class="tab-link" data-tab="portfolio">Portfolio</a></li>
+            <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
+        </ul>
+    </nav>
     
-    <div class="container">
-        <header>
-            <h1>My Personal Blog</h1>
-            <p><em>"Druk to Fredericton: Engineering a Life Where Prayer Flags Meet Maple Leaves"</em></p>
-        </header>
-    </div>
+    <!-- HOME TAB CONTENT -->
+    <div id="home" class="tab-content active">
 
     <!-- Hero Section with About CTA -->
     <section class="hero">
-        <div class="container">
+<div class="container">
+            <div class="welcome-content">
+                <h1>Where the Himalayas Meet the Maritimes</h1>
+                <p>Welcome to my corner of the internet! I'm <strong>Kinga Gyeltshen</strong> - an electrical engineer by profession, a storyteller by passion, and a proud Bhutanese-Canadian navigating life in Fredericton's vibrant landscapes.</p>
+                
+                <div class="featured-posts">
+                    <article class="post-preview">
+                        <h3><a href="#blog" class="tab-link" data-tab="blog">My Engineering Journey</a></h3>
+                        <p>From Bhutan's mountain monasteries to UNB's research labs, follow my path through electrical engineering and utility system innovation.</p>
             <div class="hero-content">
                 <h2>Bridging Engineering Excellence and Cultural Wisdom</h2>
                 <p class="lead">From the Himalayan peaks of Bhutan to the innovation hubs of Atlantic Canada, I bring a unique perspective to electrical engineering and cross-cultural collaboration.</p>
@@ -586,7 +336,11 @@
                                 <a href="power-optimization.html" class="read-more">Read Full Article <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
-                    </article>
+</article>
+                    
+                    <article class="post-preview">
+                        <h3><a href="#blog" class="tab-link" data-tab="blog">Cultural Fusion</a></h3>
+                        <p>Discover how Gross National Happiness meets Maritime resilience in my family's Canadian journey.</p>
                     <article class="article-card">
                         <div class="article-image">
                             <img src="images/bhutan-canada.jpg" alt="Bhutan and Canada Flags">
@@ -600,7 +354,11 @@
                                 <a href="cultural-transition.html" class="read-more">Read Full Article <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
-                    </article>
+</article>
+                    
+                    <article class="post-preview">
+                        <h3><a href="technology.html">Technology Projects</a></h3>
+                        <p>Explore my work with AspenTech Monarch and utility system supervision.</p>
                     <article class="article-card">
                         <div class="article-image">
                             <img src="images/mentorship.jpg" alt="STEM Mentorship">
@@ -614,14 +372,78 @@
                                 <a href="stem-mentorship.html" class="read-more">Read Full Article <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
-                    </article>
-                </div>
+</article>
+</div>
+                
+                <h2>Recent Updates</h2>
+                <ul>
+                    <li>🔌 New article on SCADA systems coming soon</li>
+                    <li>🍁 Fall hiking adventures in Fundy National Park</li>
+                    <li>📚 Working on a memoir about cultural adaptation</li>
+                </ul>
                 <div class="view-all">
                     <a href="articles.html" class="btn btn-outline">View All Articles</a>
                 </div>
-            </div>
+</div>
+        </div>
+    </div>
         </section>
 
+    <!-- BLOG TAB CONTENT -->
+    <div id="blog" class="tab-content">
+        <div class="container">
+            <main class="main">
+                <article class="post">
+                    <h2>My First Blog Post</h2>
+                    <p class="post-meta">Posted on May 31, 2025 by Admin</p>
+                    <p>"Hello! I'm Kinga Gyeltshen – an electrical engineer by training, a researcher by curiosity, and a Bhutanese-Canadian at heart. This blog traces my journey from Bhutan to Fredericton, where I pursued a Master's at UNB, launched my career, and now raise my family amidst New Brunswick's tides and trails. Expect reflections on engineering, immigrant life, and the unexpected joys of finding home where maple trees meet mountain memories. Welcome to my corner of the internet!"</p>
+                    <a href="#">Read More</a>
+                </article>
+                
+                <article class="post">
+                    <h2>My Journey to Fredericton: Education, Career, and Family Life</h2>
+                    <p class="post-meta">Posted on <time datetime="2025-05-31">May 31, 2025</time> by Kinga Gyeltshen</p>
+                    
+                    <img src="fredericton-skyline.jpg" alt="Fredericton, New Brunswick" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
+                    
+                    <h3>From Bhutan to Atlantic Canada</h3>
+                    <p>My journey brought me from Bhutan to Fredericton, New Brunswick, where I came to pursue a Master's program at the <strong>University of New Brunswick</strong>. As a research-based student in Electrical Engineering, I found both academic challenges and incredible opportunities in this welcoming Canadian city.</p>
+                    
+                    <h3>Academic Achievement and Career Transition</h3>
+                    <p>After successfully completing my program, I joined the workforce in the last quarter of 2022. Fredericton has proven to be an excellent place for professional growth in the engineering field, with its growing tech sector and research opportunities.</p>
+                    
+                    <h3>Family Life in Atlantic Canada</h3>
+                    <p>What makes Fredericton truly special is what it has offered to my family:</p>
+                    <ul>
+                        <li>A safe, welcoming community to raise children</li>
+                        <li>Beautiful natural surroundings perfect for family activities</li>
+                        <li>Four distinct seasons that each bring their own charm</li>
+                    </ul>
+                    
+                    <blockquote><i>"The Atlantic Canadian lifestyle has given us the perfect balance between career opportunities and quality family time."</i></blockquote>
+                    
+                    <h3>Exploring The Beautiful Region</h3>
+                    <p>From the vibrant festivals of Fredericton to the dramatic tides of the Bay of Fundy, our summers are filled with adventures that blend culture and nature. On land, we hike through Odell Park's lush trails and step into history at Kings Landing. By the ocean, we marvel at Hopewell Rocks' flowerpot formations and breathe in the salty air of Saint Andrews. Each destination—whether Fundy National Park's waterfalls or the soulful rhythms of the Harvest Jazz & Blues Festival—reveals why Atlantic Canada's beauty captivates our family year after year.</p>
+                    
+                    <img src="family-outing.JPG" alt="Family exploring Atlantic Canada" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
+                    
+                    <h3>Why We Chose to Stay</h3>
+                    <p>Fredericton offers the perfect combination of:</p>
+                    <ol>
+                        <li>Career opportunities in engineering and technology</li>
+                        <li>Excellent education system for our children</li>
+                        <li>Affordable quality of life</li>
+                        <li>Natural beauty right at our doorstep</li>
+                    </ol>
+                    
+                    <p>As we continue our Canadian journey, we're grateful for the warm welcome we've received and look forward to many more years in this special part of the country.</p>
+                    
+                    <div class="tags">
+                        <span>Tags: </span>
+                        <a href="#">Immigration Experience</a>, 
+                        <a href="#">Fredericton</a>, 
+                        <a href="#">Engineering Career</a>, 
+                        <a href="#">Family Life</a>
         <!-- Professional Highlights -->
         <section class="highlights">
             <div class="container">
@@ -630,47 +452,65 @@
                     <p>Key achievements and ongoing projects</p>
                 </div>
                 <div class="highlight-timeline">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">2023 - Present</div>
-                            <div class="timeline-content">
-                                <h3>Senior Electrical Engineer</h3>
-                                <p>Leading power system optimization projects for utility clients across Atlantic Canada</p>
-                                <a href="about.html#experience" class="timeline-link">More about my work <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2020 - 2022</div>
-                            <div class="timeline-content">
-                                <h3>Research Assistant, UNB</h3>
-                                <p>Conducted groundbreaking research on renewable energy integration in maritime climates</p>
-                                <a href="about.html#research" class="timeline-link">Research details <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2019</div>
-                            <div class="timeline-content">
-                                <h3>MSc Electrical Engineering</h3>
-                                <p>Graduated with honors from University of New Brunswick</p>
-                                <a href="about.html#education" class="timeline-link">Academic journey <i class="fas fa-chevron-right"></i></a>
-                            </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Senior Electrical Engineer</h3>
+                            <p>Leading power system optimization projects for utility clients across Atlantic Canada</p>
+                            <a href="about.html#experience" class="timeline-link">More about my work <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
-                </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <div class="timeline-content">
+                            <h3>Research Assistant, UNB</h3>
+                            <p>Conducted groundbreaking research on renewable energy integration in maritime climates</p>
+                            <a href="about.html#research" class="timeline-link">Research details <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019</div>
+                        <div class="timeline-content">
+                            <h3>MSc Electrical Engineering</h3>
+                            <p>Graduated with honors from University of New Brunswick</p>
+                            <a href="about.html#education" class="timeline-link">Academic journey <i class="fas fa-chevron-right"></i></a>
+                        </div>
+</div>
+                </article>
+            </main>
+            
+            <aside>
+                <div class="about">
+                    <h3>About Me</h3>
+                    <img src="profile.jpg" alt="Profile Picture" style="width:100%; max-width:200px; border-radius:50%;">
+                    <p><strong>Electrical Engineer | UNB Researcher | Bhutanese-Canadian Explorer</strong></p>
+                    <p>Born in the Himalayan kingdom of Bhutan and now rooted in New Brunswick's vibrant landscapes, I bridge worlds through engineering and storytelling. After completing my Master's in Electrical Engineering at the University of New Brunswick, I transitioned into the Canadian workforce in late 2022—where I now solve technical challenges by day and chase coastal adventures with my family by weekend.</p>
+                    <p>This blog chronicles:</p>
+                    <ul>
+                        <li>🔌 <strong>Engineering Insights:</strong> From thesis research to industry applications</li>
+                        <li>🌊 <strong>Atlantic Living:</strong> Why Fredericton stole our hearts</li>
+                        <li>🏔️ <strong>Cultural Threads:</strong> Blazing momos with maple syrup, and other Bhutan-Canada fusions</li>
+                    </ul>
+</div>
+                
+                <div class="categories">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="#">Travel</a></li>
+                        <li><a href="#">Food</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                    </ul>
             </div>
         </section>
     </main>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="tab-content contact-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>I'd love to hear from you about potential collaborations or opportunities</p>
-            </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
+                    <h2>Let's Connect</h2>
                     <p>I'm always interested in discussing engineering projects, cultural exchanges, or potential collaborations.</p>
                     <div class="contact-details">
                         <div class="contact-item">
@@ -697,7 +537,13 @@
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
-                </div>
+</div>
+                
+                <div class="social">
+                    <h3>Connect With Me</h3>
+                    <a href="#">Facebook</a> |
+                    <a href="#">Instagram</a> |
+                    <a href="https://www.linkedin.com/in/kinga-gyeltshen-msc-ab900951" target="_blank">LinkedIn</a>
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
@@ -714,14 +560,31 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
                     </form>
-                </div>
+</div>
+            </aside>
             </div>
-        </div>
+</div>
+    </div>
     </section>
 
+    <!-- OTHER TABS (About, Portfolio, Contact) -->
+    <div id="about" class="tab-content">
     <!-- Footer -->
     <footer class="footer">
+<div class="container">
+            <!-- About content would go here -->
+        </div>
+    </div>
+    
+    <div id="portfolio" class="tab-content">
         <div class="container">
+            <!-- Portfolio content would go here -->
+        </div>
+    </div>
+    
+    <div id="contact" class="tab-content">
+        <div class="container">
+            <!-- Contact content would go here -->
             <div class="footer-content">
                 <div class="footer-about">
                     <h3>Kinga Gyeltshen</h3>
@@ -733,9 +596,9 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="technology.html">Technology Projects</a></li>
+                        <li><a href="culture.html">Cultural Writings</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
@@ -754,14 +617,78 @@
                     <a href="terms.html">Terms of Use</a>
                 </div>
             </div>
-        </div>
-    </footer>
+</div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 My Personal Blog. All rights reserved.</p>
+</footer>
 
-    <script>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabLinks = document.querySelectorAll('.tab-link');
+            
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Hide all tabs
+                    document.querySelectorAll('.tab-content').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+                    
+                    // Show selected tab
+                    document.getElementById(tabId).classList.add('active');
+                    
+                    // Update URL without reloading
+                    history.pushState(null, null, '#' + tabId);
+                    
+                    // Scroll to top smoothly
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+        // Enhanced Tab Switching
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tabId = this.getAttribute('data-tab');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.style.display = 'none';
+                });
+                
+                // Show selected tab
+                document.getElementById(tabId).style.display = 'block';
+                
+                // Smooth scroll to tab
+                window.scrollTo({
+                    top: document.getElementById(tabId).offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-links a').forEach(navLink => {
+                    navLink.classList.remove('active');
+});
+                this.classList.add('active');
+});
+        });
+
         // Contact Form Handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
+            // Check URL hash on load
+            if(window.location.hash) {
+                const tabId = window.location.hash.substring(1);
+                const tabLink = document.querySelector(`.tab-link[data-tab="${tabId}"]`);
+                if(tabLink) {
+                    tabLink.click();
+                }
             // Form validation
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
@@ -773,20 +700,39 @@
                 this.reset();
             } else {
                 alert('Please fill in all required fields.');
-            }
-        });
+}
+});
+        
+        // Handle back/forward navigation
+        window.addEventListener('popstate', function() {
+            if(window.location.hash) {
+                const tabId = window.location.hash.substring(1);
+                const tabLink = document.querySelector(`.tab-link[data-tab="${tabId}"]`);
+                if(tabLink) {
+                    tabLink.click();
+                }
 
         // Newsletter Form Handling
         document.getElementById('newsletterForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const email = this.querySelector('input[type="email"]').value.trim();
             
             if (email) {
                 alert('Thank you for subscribing with ' + email + '!');
                 this.reset();
-            }
+}
+});
+
+        // Set active nav link on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                const linkPage = link.getAttribute('href').split('/').pop();
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
         });
-    </script>
+</script>
 </body>
 </html>
