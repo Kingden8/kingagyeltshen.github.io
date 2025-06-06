@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,186 +5,231 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kinga Gyeltshen's Personal Blog</title>
 <style>
-    /* ===== New Header Image Styles ===== */
-    /* ===== Header Image Styles ===== */
+    /* ===== Global Styles ===== */
+    :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #BF0A30;
+        --accent-color: #3498db;
+        --light-bg: #f9f9f9;
+        --dark-text: #333;
+        --light-text: #fff;
+        --sidebar-bg: #ecf0f1;
+        --meta-text: #7f8c8d;
+    }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-text);
+        background-color: var(--light-bg);
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* ===== Header Styles ===== */
     .header-image-container {
         width: 100%;
         height: 400px;
         overflow: hidden;
         position: relative;
-        border-bottom: 3px solid #BF0A30;
+        border-bottom: 3px solid var(--secondary-color);
     }
-
+    
     .main-header-image {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center 30%;
     }
-
+    
     header {
-        margin-top: -5px;
-        position: relative;
-        z-index: 2;
+        background: var(--primary-color);
+        color: var(--light-text);
+        padding: 1.5rem 0;
+        text-align: center;
     }
     
-    /* Basic CSS styling */
-    body {
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        margin: 0 10px;
-        padding: 0;
-        color: #333;
-        background-color: #f9f9f9;
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
     }
-
-    header {
-        margin-top: -5px;
-        position: relative;
-        z-index: 2;
-        background: #2c3e50;
-        color: #fff;
-        padding: 0.15rem 0;
-        text-align: center;
-        height: auto;
-        min-height: 80px;
+    
+    header p {
+        font-style: italic;
+        font-size: 1.1rem;
     }
-
+    
+    /* ===== Navigation ===== */
     nav {
         background: #34495e;
-        padding: 0.5rem;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
-
+    
     nav ul {
         list-style: none;
-        padding: 0;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
-
+    
     nav ul li {
-        margin: 0 1rem;
+        margin: 0 1.5rem;
     }
-
+    
     nav ul li a {
-        color: #fff;
+        color: var(--light-text);
         text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+        transition: all 0.3s ease;
     }
-
+    
     nav ul li a:hover {
-        text-decoration: underline;
+        color: var(--secondary-color);
+        border-bottom: 2px solid var(--secondary-color);
     }
-
+    
+    /* ===== Main Content Container ===== */
     .container {
-        width: 80%;
-        margin: auto;
-        overflow: hidden;
-        padding: 2rem 0;
+        width: 90%;
+        max-width: 1200px;
+        margin: 2rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
     }
-
+    
     .main {
-        float: left;
-        width: 70%;
-        padding-right: 2rem;
-        box-sizing: border-box;
+        flex: 2;
+        min-width: 300px;
     }
-
+    
     aside {
-        float: right;
-        width: 30%;
-        background: #ecf0f1;
-        padding: 1rem;
-        box-sizing: border-box;
-    }
-
-    footer {
-        background: #2c3e50;
-        color: #fff;
-        text-align: center;
-        padding: 1rem 0;
-        clear: both;
-    }
-
-    .post {
-        background: #fff;
-        margin-bottom: 2rem;
-        padding: 0.5rem;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .post h2 {
-        margin-top: 0;
-    }
-
-    .post-meta {
-        color: #7f8c8d;
-        font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-        .main, aside {
-            width: 100%;
-            float: none;
-            padding-right: 0;
-        }
-    }
-
-    /* Tab styles */
-    .tab-content {
-        display: none;
-        padding: 20px;
-        background: white;
-        border-radius: 5px;
-        margin-top: 15px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .tab-content.active {
-        display: block;
-    }
-    .tab-content h3 { 
-        color: #2c3e50; 
-        border-bottom: 2px solid #BF0A30; 
-        padding-bottom: 5px;
-    }
-    .tags a {
-        background: #ecf0f1;
-        padding: 3px 8px;
-        border-radius: 3px;
-        margin-right: 5px;
+        flex: 1;
+        min-width: 250px;
     }
     
-    /* Home page specific styles */
-    .welcome-content {
-        background: white;
+    /* ===== Common Content Styles ===== */
+    .welcome-content, 
+    .tab-content, 
+    .post, 
+    .about-section {
+        background: var(--light-text);
         padding: 2rem;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         margin-bottom: 2rem;
     }
     
-    /* About page specific styles */
+    h1, h2, h3, h4 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+        border-bottom: 3px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    p {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px;
+        margin: 1rem 0;
+    }
+    
+    .float-right {
+        float: right;
+        margin: 0 0 1rem 1.5rem;
+    }
+    
+    .float-left {
+        float: left;
+        margin: 0 1.5rem 1rem 0;
+    }
+    
+    /* ===== Post Specific Styles ===== */
+    .post-meta {
+        color: var(--meta-text);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    blockquote {
+        border-left: 4px solid var(--secondary-color);
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: #555;
+    }
+    
+    ul, ol {
+        margin: 1rem 0 1rem 2rem;
+    }
+    
+    li {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* ===== About Page Specific ===== */
     .about-container {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
     }
+    
     .about-main {
         flex: 2;
         min-width: 300px;
     }
+    
     .about-sidebar {
         flex: 1;
         min-width: 250px;
     }
-    .about-section {
-        margin-bottom: 2rem;
+    
+    .profile-img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 1.5rem;
+        border: 5px solid var(--secondary-color);
     }
+    
     .timeline {
         position: relative;
         padding-left: 30px;
         margin: 2rem 0;
     }
+    
     .timeline::before {
         content: '';
         position: absolute;
@@ -193,12 +237,14 @@
         top: 0;
         bottom: 0;
         width: 2px;
-        background: #BF0A30;
+        background: var(--secondary-color);
     }
+    
     .timeline-item {
         position: relative;
         margin-bottom: 2rem;
     }
+    
     .timeline-item::before {
         content: '';
         position: absolute;
@@ -207,20 +253,164 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background: #2c3e50;
-        border: 3px solid #BF0A30;
+        background: var(--primary-color);
+        border: 3px solid var(--secondary-color);
     }
+    
     .skills-list {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+        margin: 1rem 0;
     }
+    
     .skill-tag {
-        background: #2c3e50;
-        color: white;
-        padding: 5px 10px;
+        background: var(--primary-color);
+        color: var(--light-text);
+        padding: 5px 15px;
         border-radius: 20px;
         font-size: 0.9rem;
+    }
+    
+    /* ===== Tags and Categories ===== */
+    .tags {
+        margin: 1.5rem 0;
+    }
+    
+    .tags a {
+        background: var(--sidebar-bg);
+        padding: 5px 12px;
+        border-radius: 20px;
+        margin-right: 8px;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-bottom: 8px;
+        text-decoration: none;
+        color: var(--dark-text);
+        transition: all 0.3s ease;
+    }
+    
+    .tags a:hover {
+        background: var(--secondary-color);
+        color: var(--light-text);
+    }
+    
+    /* ===== Sidebar Styles ===== */
+    .sidebar-section {
+        background: var(--light-text);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+    }
+    
+    .sidebar-section h3 {
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .sidebar-section ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .sidebar-section ul li {
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px dashed #ddd;
+    }
+    
+    .sidebar-section ul li:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    
+    .sidebar-section ul li a {
+        text-decoration: none;
+        color: var(--dark-text);
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar-section ul li a:hover {
+        color: var(--secondary-color);
+        padding-left: 5px;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        color: var(--secondary-color);
+    }
+    
+    /* ===== Footer ===== */
+    footer {
+        background: var(--primary-color);
+        color: var(--light-text);
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 2rem;
+    }
+    
+    footer p {
+        margin-bottom: 0;
+    }
+    
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+        
+        .main, aside {
+            width: 100%;
+        }
+        
+        nav ul li {
+            margin: 0 0.8rem;
+        }
+        
+        .header-image-container {
+            height: 300px;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        nav ul li {
+            margin: 0.5rem 0;
+        }
+        
+        .header-image-container {
+            height: 200px;
+        }
     }
 </style>
 </head>
@@ -246,20 +436,63 @@
 <!-- Home Content -->
 <div id="home" class="tab-content active">
     <div class="container">
-        <div class="welcome-content">
-            <h1>Where the Himalayas Meet the Maritimes</h1>
-            <p>Welcome to my corner of the internet! I'm <strong>Kinga Gyeltshen</strong>...</p>
-            <p>—an electrical engineer by profession, a storyteller by passion, and a proud Bhutanese-Canadian navigating life in Fredericton's vibrant landscapes.</p>
-            <p>This blog traces my journey:</p>
-            <p>⚡ From Bhutan's mountain monasteries to UNB's research labs</p>
-            <p>🍁 Building a career in Atlantic Canada's tech sector</p>
-            <p>👨‍👩‍👧‍👦 Raising a family where prayer flags flutter alongside maple leaves</p>
-            <p>Expect:</p>
-            <p>Engineering insights from thesis to industry</p>
-            <p>Immigrant reflections on finding home abroad</p>
-            <p>Atlantic adventures—hiking Fundy, savoring momo-poutine fusions</p>
-            <p>"Gross National Happiness meets Maritime resilience—come explore this unexpected blend with me!"</p>
-        </div>
+        <main class="main">
+            <div class="welcome-content">
+                <h1>Where the Himalayas Meet the Maritimes</h1>
+                <img src="bhutan-canada.jpg" alt="Bhutan and Canada fusion" class="float-right" style="max-width: 400px;">
+                <p>Welcome to my corner of the internet! I'm <strong>Kinga Gyeltshen</strong> — an electrical engineer by profession, a storyteller by passion, and a proud Bhutanese-Canadian navigating life in Fredericton's vibrant landscapes.</p>
+                <p>This blog traces my journey from the Himalayan kingdom of Bhutan to the picturesque landscapes of Atlantic Canada, where I've built a life that blends my cultural heritage with my professional aspirations.</p>
+                
+                <h2>My Journey</h2>
+                <ul>
+                    <li><strong>⚡ Academic Pursuits:</strong> From Bhutan's mountain monasteries to UNB's research labs</li>
+                    <li><strong>🍁 Professional Growth:</strong> Building a career in Atlantic Canada's tech sector</li>
+                    <li><strong>👨‍👩‍👧‍👦 Family Life:</strong> Raising a family where prayer flags flutter alongside maple leaves</li>
+                </ul>
+                
+                <h2>What to Expect</h2>
+                <div class="skills-list">
+                    <span class="skill-tag">Engineering Insights</span>
+                    <span class="skill-tag">Immigrant Reflections</span>
+                    <span class="skill-tag">Cultural Fusion</span>
+                    <span class="skill-tag">Atlantic Adventures</span>
+                    <span class="skill-tag">Professional Growth</span>
+                </div>
+                
+                <blockquote>
+                    "Gross National Happiness meets Maritime resilience—come explore this unexpected blend with me!"
+                </blockquote>
+            </div>
+        </main>
+        
+        <aside>
+            <div class="sidebar-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" class="tab-link" data-tab="about">My Professional Journey</a></li>
+                    <li><a href="#" class="tab-link" data-tab="blog">Latest Blog Posts</a></li>
+                    <li><a href="#" class="tab-link" data-tab="portfolio">Engineering Projects</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Featured Post</h3>
+                <img src="fredericton-skyline.jpg" alt="Fredericton Skyline" style="margin-bottom: 1rem;">
+                <h4>My Journey to Fredericton</h4>
+                <p>Discover how I transitioned from Bhutan to building a life in Atlantic Canada...</p>
+                <a href="#" class="tab-link" data-tab="blog">Read More</a>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="https://www.linkedin.com/in/kinga-gyeltshen-msc-ab900951" target="_blank" title="LinkedIn">💼</a>
+                    <a href="#" title="Instagram">📸</a>
+                </div>
+            </div>
+        </aside>
     </div>
 </div>
 
@@ -269,75 +502,81 @@
         <div class="about-container">
             <div class="about-main">
                 <div class="about-section">
-                    <h2>My Story</h2>
-                    <img src="profile.jpg" alt="Kinga Gyeltshen" style="width:100%; max-width:300px; float:right; margin:0 0 20px 20px; border-radius:8px;">
+                    <h1>My Professional Journey</h1>
+                    <img src="profile.jpg" alt="Kinga Gyeltshen" class="profile-img">
                     <p>Born amidst the breathtaking peaks of Bhutan, I grew up surrounded by a culture that values spiritual wealth as much as material progress. My journey took me across continents to Fredericton, New Brunswick, where I've built a life that blends my Himalayan roots with Atlantic Canadian warmth.</p>
-                    <p>As an electrical engineer, I specialize in [your specialization]. My academic journey includes a Master's degree from the University of New Brunswick, where I researched [your research topic]. Today, I apply these skills in [your current role/industry], solving complex problems while maintaining the Bhutanese values of compassion and mindfulness.</p>
+                    <p>As an electrical engineer, I specialize in power systems and renewable energy integration. My academic journey includes a Master's degree from the University of New Brunswick, where I researched smart grid technologies. Today, I apply these skills in the energy sector, solving complex problems while maintaining the Bhutanese values of compassion and mindfulness.</p>
                 </div>
                 
                 <div class="about-section">
-                    <h2>Professional Journey</h2>
+                    <h2>Education & Career Timeline</h2>
                     <div class="timeline">
                         <div class="timeline-item">
                             <h3>Master of Science in Electrical Engineering</h3>
                             <p><strong>University of New Brunswick</strong> | 2020-2022</p>
-                            <p>Specialized in [your specialization], with thesis research on [your thesis topic]. Published papers in [journals/conferences].</p>
+                            <p>Specialized in Power Systems Engineering, with thesis research on "Smart Grid Integration in Atlantic Canada". Published papers in IEEE Transactions on Power Systems.</p>
                         </div>
                         <div class="timeline-item">
                             <h3>Electrical Engineer</h3>
-                            <p><strong>[Current Company]</strong> | 2022-Present</p>
-                            <p>Leading projects in [your area of work]. Developed [specific achievements]. Collaborating with teams to [what you do].</p>
+                            <p><strong>NB Power</strong> | 2022-Present</p>
+                            <p>Leading projects in renewable energy integration. Developed new protocols for grid stability with increasing renewable penetration. Collaborating with cross-functional teams to implement innovative energy solutions.</p>
                         </div>
                         <div class="timeline-item">
                             <h3>Research Assistant</h3>
-                            <p><strong>UNB Research Lab</strong> | 2020-2022</p>
-                            <p>Worked on [research projects]. Developed skills in [specific skills]. Contributed to [publications/innovations].</p>
+                            <p><strong>UNB Power Research Lab</strong> | 2020-2022</p>
+                            <p>Worked on NSERC-funded smart grid projects. Developed skills in MATLAB/Simulink modeling and power system simulation. Contributed to three peer-reviewed publications.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="about-section">
-                    <h2>Skills & Expertise</h2>
+                    <h2>Technical Skills</h2>
                     <div class="skills-list">
-                        <span class="skill-tag">Power Systems</span>
+                        <span class="skill-tag">Power Systems Analysis</span>
                         <span class="skill-tag">Renewable Energy</span>
                         <span class="skill-tag">MATLAB/Simulink</span>
                         <span class="skill-tag">Python</span>
+                        <span class="skill-tag">ETAP</span>
+                        <span class="skill-tag">PSCAD</span>
+                        <span class="skill-tag">AutoCAD</span>
                         <span class="skill-tag">Project Management</span>
                         <span class="skill-tag">Technical Writing</span>
-                        <span class="skill-tag">Cross-Cultural Communication</span>
-                        <span class="skill-tag">Bhutanese-English Translation</span>
                     </div>
                 </div>
             </div>
             
             <div class="about-sidebar">
-                <div class="about-section">
+                <div class="sidebar-section">
                     <h3>Quick Facts</h3>
                     <ul>
-                        <li><strong>From:</strong> Bhutan</li>
+                        <li><strong>From:</strong> Thimphu, Bhutan</li>
                         <li><strong>Lives in:</strong> Fredericton, NB</li>
                         <li><strong>Education:</strong> M.Sc. Electrical Engineering</li>
                         <li><strong>Languages:</strong> English, Dzongkha, Nepali</li>
                         <li><strong>Hobbies:</strong> Hiking, Photography, Cooking fusion cuisine</li>
+                        <li><strong>Family:</strong> Married with two children</li>
                     </ul>
                 </div>
                 
-                <div class="about-section">
+                <div class="sidebar-section">
                     <h3>Cultural Bridge</h3>
                     <p>I actively participate in:</p>
                     <ul>
                         <li>Bhutanese cultural events in Atlantic Canada</li>
                         <li>Multicultural festivals showcasing Himalayan traditions</li>
                         <li>Engineering mentorship for new immigrants</li>
+                        <li>Bhutan-Canada friendship associations</li>
                     </ul>
                 </div>
                 
-                <div class="about-section">
-                    <h3>Connect With Me</h3>
-                    <a href="https://www.linkedin.com/in/kinga-gyeltshen-msc-ab900951" target="_blank">LinkedIn</a><br>
-                    <a href="#">ResearchGate</a><br>
-                    <a href="#">Email</a>
+                <div class="sidebar-section">
+                    <h3>Professional Affiliations</h3>
+                    <ul>
+                        <li>Engineers Canada</li>
+                        <li>IEEE Member</li>
+                        <li>APEGNB</li>
+                        <li>Bhutanese Professionals Network</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -349,20 +588,15 @@
     <div class="container">
         <main class="main">
             <article class="post">
-                <h2>My First Blog Post</h2>
-                <p class="post-meta">Posted on May 31, 2025 by Admin</p>
-                <p>"Hello! I'm Kinga Gyeltshen – an electrical engineer by training, a researcher by curiosity, and a Bhutanese-Canadian at heart. This blog traces my journey from Bhutan to Fredericton, where I pursued a Master's at UNB, launched my career, and now raise my family amidst New Brunswick's tides and trails. Expect reflections on engineering, immigrant life, and the unexpected joys of finding home where maple trees meet mountain memories. Welcome to my corner of the internet!"</p>
-                <a href="#">Read More</a>
-            </article>
-            
-            <article class="post">
                 <h2>My Journey to Fredericton: Education, Career, and Family Life</h2>
                 <p class="post-meta">Posted on <time datetime="2025-05-31">May 31, 2025</time> by Kinga Gyeltshen</p>
                 
-                <img src="fredericton-skyline.jpg" alt="Fredericton, New Brunswick" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
+                <img src="fredericton-skyline.jpg" alt="Fredericton, New Brunswick">
                 
                 <h3>From Bhutan to Atlantic Canada</h3>
                 <p>My journey brought me from Bhutan to Fredericton, New Brunswick, where I came to pursue a Master's program at the <strong>University of New Brunswick</strong>. As a research-based student in Electrical Engineering, I found both academic challenges and incredible opportunities in this welcoming Canadian city.</p>
+                
+                <img src="unb-campus.jpg" alt="UNB Campus" class="float-left" style="max-width: 300px;">
                 
                 <h3>Academic Achievement and Career Transition</h3>
                 <p>After successfully completing my program, I joined the workforce in the last quarter of 2022. Fredericton has proven to be an excellent place for professional growth in the engineering field, with its growing tech sector and research opportunities.</p>
@@ -373,67 +607,73 @@
                     <li>A safe, welcoming community to raise children</li>
                     <li>Beautiful natural surroundings perfect for family activities</li>
                     <li>Four distinct seasons that each bring their own charm</li>
+                    <li>Excellent education system and healthcare</li>
                 </ul>
                 
-                <blockquote><i>"The Atlantic Canadian lifestyle has given us the perfect balance between career opportunities and quality family time."</i></blockquote>
+                <blockquote>
+                    "The Atlantic Canadian lifestyle has given us the perfect balance between career opportunities and quality family time."
+                </blockquote>
                 
                 <h3>Exploring The Beautiful Region</h3>
-                <p>From the vibrant festivals of Fredericton to the dramatic tides of the Bay of Fundy, our summers are filled with adventures that blend culture and nature. On land, we hike through Odell Park's lush trails and step into history at Kings Landing. By the ocean, we marvel at Hopewell Rocks' flowerpot formations and breathe in the salty air of Saint Andrews. Each destination—whether Fundy National Park's waterfalls or the soulful rhythms of the Harvest Jazz & Blues Festival—reveals why Atlantic Canada's beauty captivates our family year after year.</p>
+                <p>From the vibrant festivals of Fredericton to the dramatic tides of the Bay of Fundy, our summers are filled with adventures that blend culture and nature. On land, we hike through Odell Park's lush trails and step into history at Kings Landing. By the ocean, we marvel at Hopewell Rocks' flowerpot formations and breathe in the salty air of Saint Andrews.</p>
                 
-                <img src="family-outing.JPG" alt="Family exploring Atlantic Canada" style="width:100%; max-width:600px; border-radius:8px; margin:10px 0;">
+                <img src="family-outing.jpg" alt="Family exploring Atlantic Canada">
                 
                 <h3>Why We Chose to Stay</h3>
                 <p>Fredericton offers the perfect combination of:</p>
                 <ol>
-                    <li>Career opportunities in engineering and technology</li>
-                    <li>Excellent education system for our children</li>
-                    <li>Affordable quality of life</li>
-                    <li>Natural beauty right at our doorstep</li>
+                    <li><strong>Career opportunities:</strong> Growing tech and engineering sector with research opportunities</li>
+                    <li><strong>Education:</strong> Excellent schools and universities for our children</li>
+                    <li><strong>Quality of life:</strong> Affordable living with access to nature and amenities</li>
+                    <li><strong>Community:</strong> Welcoming atmosphere for immigrants</li>
                 </ol>
                 
                 <p>As we continue our Canadian journey, we're grateful for the warm welcome we've received and look forward to many more years in this special part of the country.</p>
                 
                 <div class="tags">
                     <span>Tags: </span>
-                    <a href="#">Immigration Experience</a>, 
-                    <a href="#">Fredericton</a>, 
-                    <a href="#">Engineering Career</a>, 
+                    <a href="#">Immigration Experience</a>
+                    <a href="#">Fredericton</a>
+                    <a href="#">Engineering Career</a>
                     <a href="#">Family Life</a>
                 </div>
+            </article>
+            
+            <article class="post">
+                <h2>My First Blog Post</h2>
+                <p class="post-meta">Posted on May 30, 2025 by Kinga Gyeltshen</p>
+                <p>"Hello! I'm Kinga Gyeltshen – an electrical engineer by training, a researcher by curiosity, and a Bhutanese-Canadian at heart. This blog traces my journey from Bhutan to Fredericton, where I pursued a Master's at UNB, launched my career, and now raise my family amidst New Brunswick's tides and trails."</p>
+                <p>Expect reflections on engineering, immigrant life, and the unexpected joys of finding home where maple trees meet mountain memories. Welcome to my corner of the internet!</p>
+                <a href="#" class="tab-link" data-tab="blog">Read More</a>
             </article>
         </main>
         
         <aside>
-            <div class="about">
-                <h3>About Me</h3>
-                <img src="profile.jpg" alt="Profile Picture" style="width:100%; max-width:200px; border-radius:50%;">
+            <div class="sidebar-section">
+                <h3>About The Author</h3>
+                <img src="profile.jpg" alt="Kinga Gyeltshen" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
                 <p><strong>Electrical Engineer | UNB Researcher | Bhutanese-Canadian Explorer</strong></p>
-                <p>Born in the Himalayan kingdom of Bhutan and now rooted in New Brunswick's vibrant landscapes, I bridge worlds through engineering and storytelling. After completing my Master's in Electrical Engineering at the University of New Brunswick, I transitioned into the Canadian workforce in late 2022—where I now solve technical challenges by day and chase coastal adventures with my family by weekend.</p>
-                <p>This blog chronicles:</p>
-                <ul>
-                    <li>🔌 <strong>Engineering Insights:</strong> From thesis research to industry applications</li>
-                    <li>🌊 <strong>Atlantic Living:</strong> Why Fredericton stole our hearts</li>
-                    <li>🏔️ <strong>Cultural Threads:</strong> Blazing momos with maple syrup, and other Bhutan-Canada fusions</li>
-                </ul>
-                <p>When not debugging circuits, you'll find me hiking Fundy's trails, introducing my kids to Bhutanese folklore, or perfecting the art of snowshoeing (a skill no Himalayan native expects to need!).</p>
-                <p>"Gross National Happiness meets Maritime resilience—this is my unexpected, wonderful life at 45°N."</p>
+                <p>Born in the Himalayan kingdom of Bhutan and now rooted in New Brunswick's vibrant landscapes, I bridge worlds through engineering and storytelling.</p>
             </div>
             
-            <div class="categories">
+            <div class="sidebar-section">
                 <h3>Categories</h3>
                 <ul>
-                    <li><a href="technology.html">Technology</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Food</a></li>
-                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Engineering</a></li>
+                    <li><a href="#">Immigration</a></li>
+                    <li><a href="#">Family Life</a></li>
+                    <li><a href="#">Atlantic Canada</a></li>
+                    <li><a href="#">Cultural Fusion</a></li>
                 </ul>
             </div>
             
-            <div class="social">
-                <h3>Connect With Me</h3>
-                <a href="#">Facebook</a> |
-                <a href="#">Instagram</a> |
-                <a href="https://www.linkedin.com/in/kinga-gyeltshen-msc-ab900951" target="_blank">LinkedIn</a>
+            <div class="sidebar-section">
+                <h3>Subscribe</h3>
+                <p>Get the latest posts delivered to your inbox</p>
+                <form>
+                    <input type="email" placeholder="Your email address" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                    <button type="submit" style="width: 100%; padding: 0.5rem; background: var(--secondary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">Subscribe</button>
+                </form>
             </div>
         </aside>
     </div>
@@ -442,42 +682,67 @@
 <!-- Portfolio Content -->
 <div id="portfolio" class="tab-content">
     <div class="container">
-        <h2>My Portfolio</h2>
-        <p>Coming soon - showcasing my engineering projects, research papers, and professional achievements.</p>
+        <div class="welcome-content">
+            <h1>My Engineering Portfolio</h1>
+            <p>Coming soon - showcasing my projects, research papers, and professional achievements in electrical engineering.</p>
+        </div>
     </div>
 </div>
 
 <!-- Contact Content -->
 <div id="contact" class="tab-content">
     <div class="container">
-        <h2>Get In Touch</h2>
-        <p>Contact form and information will be available here.</p>
+        <div class="welcome-content">
+            <h1>Get In Touch</h1>
+            <p>Contact form and information will be available here soon.</p>
+        </div>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2025 My Personal Blog. All rights reserved.</p>
+    <p>&copy; 2025 Kinga Gyeltshen's Personal Blog. All rights reserved.</p>
 </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Tab switching functionality
     const tabLinks = document.querySelectorAll('.tab-link');
-
+    
+    // Set default tab to home if no hash in URL
+    if (!window.location.hash) {
+        document.getElementById('home').classList.add('active');
+    }
+    
     tabLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const tabId = this.getAttribute('data-tab');
-
+            
             // Hide all tabs
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
             });
-
+            
             // Show selected tab
             document.getElementById(tabId).classList.add('active');
+            
+            // Update URL hash
+            window.location.hash = tabId;
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
         });
     });
+    
+    // Check URL hash on page load
+    if (window.location.hash) {
+        const tabId = window.location.hash.substring(1);
+        const tab = document.getElementById(tabId);
+        if (tab) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+        }
+    }
 });
 </script>
 </body>
