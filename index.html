@@ -101,18 +101,20 @@
         .post {
             background: #fff;
             margin-bottom: 2rem;
-            padding: 0.5rem;
+            padding: 1.5rem;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .post h2 {
             margin-top: 0;
+            color: #2c3e50;
         }
         
         .post-meta {
             color: #7f8c8d;
             font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
         
         @media (max-width: 768px) {
@@ -126,34 +128,45 @@
         /* Tab styles */
         .tab-content {
             display: none;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            margin-top: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .tab-content.active {
             display: block;
         }
-        .tab-content h3 { 
-            color: #2c3e50; 
-            border-bottom: 2px solid #BF0A30; 
-            padding-bottom: 5px;
-        }
+        
         .tags a {
             background: #ecf0f1;
             padding: 3px 8px;
             border-radius: 3px;
             margin-right: 5px;
+            font-size: 0.8rem;
         }
         
         /* Home page specific styles */
         .welcome-content {
-            background: white;
+            background: #fff;
             padding: 2rem;
+            margin-bottom: 2rem;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+        }
+        
+        .featured-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .post-preview {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .post-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -169,34 +182,48 @@
     <nav>
         <ul>
             <li><a href="#" class="tab-link" data-tab="home">Home</a></li>
-            <li><a href="#" class="tab-link" data-tab="about">About</a></li>
             <li><a href="#" class="tab-link" data-tab="blog">Blog</a></li>
+            <li><a href="#" class="tab-link" data-tab="about">About</a></li>
             <li><a href="#" class="tab-link" data-tab="portfolio">Portfolio</a></li>
             <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
         </ul>
     </nav>
     
-    <!-- Home Content (separate from blog posts) -->
+    <!-- HOME TAB CONTENT -->
     <div id="home" class="tab-content active">
         <div class="container">
             <div class="welcome-content">
                 <h1>Where the Himalayas Meet the Maritimes</h1>
-                <p>Welcome to my corner of the internet! I'm <strong>Kinga Gyeltshen</strong>...</p>
-                <p>—an electrical engineer by profession, a storyteller by passion, and a proud Bhutanese-Canadian navigating life in Fredericton's vibrant landscapes.</p>
-                <p>This blog traces my journey:</p>
-                <p>⚡ From Bhutan's mountain monasteries to UNB's research labs</p>
-                <p>🍁 Building a career in Atlantic Canada's tech sector</p>
-                <p>👨‍👩‍👧‍👦 Raising a family where prayer flags flutter alongside maple leaves</p>
-                <p>Expect:</p>
-                <p>Engineering insights from thesis to industry</p>
-                <p>Immigrant reflections on finding home abroad</p>
-                <p>Atlantic adventures—hiking Fundy, savoring momo-poutine fusions</p>
-                <p>"Gross National Happiness meets Maritime resilience—come explore this unexpected blend with me!"</p>
+                <p>Welcome to my corner of the internet! I'm <strong>Kinga Gyeltshen</strong> - an electrical engineer by profession, a storyteller by passion, and a proud Bhutanese-Canadian navigating life in Fredericton's vibrant landscapes.</p>
+                
+                <div class="featured-posts">
+                    <article class="post-preview">
+                        <h3><a href="#blog" class="tab-link" data-tab="blog">My Engineering Journey</a></h3>
+                        <p>From Bhutan's mountain monasteries to UNB's research labs, follow my path through electrical engineering and utility system innovation.</p>
+                    </article>
+                    
+                    <article class="post-preview">
+                        <h3><a href="#blog" class="tab-link" data-tab="blog">Cultural Fusion</a></h3>
+                        <p>Discover how Gross National Happiness meets Maritime resilience in my family's Canadian journey.</p>
+                    </article>
+                    
+                    <article class="post-preview">
+                        <h3><a href="technology.html">Technology Projects</a></h3>
+                        <p>Explore my work with AspenTech Monarch and utility system supervision.</p>
+                    </article>
+                </div>
+                
+                <h2>Recent Updates</h2>
+                <ul>
+                    <li>🔌 New article on SCADA systems coming soon</li>
+                    <li>🍁 Fall hiking adventures in Fundy National Park</li>
+                    <li>📚 Working on a memoir about cultural adaptation</li>
+                </ul>
             </div>
         </div>
     </div>
-    
-    <!-- Blog Content -->
+
+    <!-- BLOG TAB CONTENT -->
     <div id="blog" class="tab-content">
         <div class="container">
             <main class="main">
@@ -267,8 +294,6 @@
                         <li>🌊 <strong>Atlantic Living:</strong> Why Fredericton stole our hearts</li>
                         <li>🏔️ <strong>Cultural Threads:</strong> Blazing momos with maple syrup, and other Bhutan-Canada fusions</li>
                     </ul>
-                    <p>When not debugging circuits, you'll find me hiking Fundy's trails, introducing my kids to Bhutanese folklore, or perfecting the art of snowshoeing (a skill no Himalayan native expects to need!).</p>
-                    <p>"Gross National Happiness meets Maritime resilience—this is my unexpected, wonderful life at 45°N."</p>
                 </div>
                 
                 <div class="categories">
@@ -290,23 +315,23 @@
             </aside>
         </div>
     </div>
-    
-    <!-- Other Tab Contents -->
+
+    <!-- OTHER TABS (About, Portfolio, Contact) -->
     <div id="about" class="tab-content">
         <div class="container">
-            <!-- About content -->
+            <!-- About content would go here -->
         </div>
     </div>
     
     <div id="portfolio" class="tab-content">
         <div class="container">
-            <!-- Portfolio content -->
+            <!-- Portfolio content would go here -->
         </div>
     </div>
     
     <div id="contact" class="tab-content">
         <div class="container">
-            <!-- Contact content -->
+            <!-- Contact content would go here -->
         </div>
     </div>
     
@@ -331,8 +356,37 @@
                     
                     // Show selected tab
                     document.getElementById(tabId).classList.add('active');
+                    
+                    // Update URL without reloading
+                    history.pushState(null, null, '#' + tabId);
+                    
+                    // Scroll to top smoothly
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 });
             });
+            
+            // Check URL hash on load
+            if(window.location.hash) {
+                const tabId = window.location.hash.substring(1);
+                const tabLink = document.querySelector(`.tab-link[data-tab="${tabId}"]`);
+                if(tabLink) {
+                    tabLink.click();
+                }
+            }
+        });
+        
+        // Handle back/forward navigation
+        window.addEventListener('popstate', function() {
+            if(window.location.hash) {
+                const tabId = window.location.hash.substring(1);
+                const tabLink = document.querySelector(`.tab-link[data-tab="${tabId}"]`);
+                if(tabLink) {
+                    tabLink.click();
+                }
+            }
         });
     </script>
 </body>
