@@ -452,7 +452,7 @@ font-size: 2.2rem;
 <i class="fas fa-star"></i>
 <i class="fas fa-star"></i>
 <i class="fas fa-star"></i>
-//<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
 </div>
 </div>
 </div>
@@ -489,26 +489,69 @@ this.reset();
 });
 
 document.getElementById('reviewForm').addEventListener('submit', function(e) {
-e.preventDefault();
+    e.preventDefault();
 
-const name = document.getElementById('reviewerName').value;
-const rating = ratingValue.value;
-const content = document.getElementById('reviewContent').value;
+    const name = document.getElementById('reviewerName').value;
+    const rating = ratingValue.value;
+    const content = document.getElementById('reviewContent').value;
 
-if (rating === "0") {
-alert('Please select a rating');
-return;
-}
+    if (rating === "0") {
+        alert('Please select a rating');
+        return;
+    }
 
-alert('Thank you for your review! It has been submitted successfully.');
-this.reset();
+    // Create a new review card
+    const reviewCard = document.createElement('div');
+    reviewCard.className = 'review-card';
+    
+    // Generate star icons based on rating
+    let starsHTML = '';
+    for (let i = 1; i <= 5; i++) {
+        starsHTML += i <= rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+    }
 
-// Reset stars
-stars.forEach(star => {
-star.classList.remove('fas', 'active');
-star.classList.add('far');
-});
-ratingValue.value = "0";
+    // Set current date
+    const currentDate = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    });
+
+    // Populate the review card HTML
+    reviewCard.innerHTML = `
+        <div class="review-header">
+            <div class="reviewer">
+                <div class="avatar">${name.charAt(0).toUpperCase()}</div>
+                <div class="reviewer-info">
+                    <h4>${name}</h4>
+                    <p>Verified User</p>
+                </div>
+            </div>
+            <div class="rating">
+                ${starsHTML}
+            </div>
+        </div>
+        <div class="review-content">
+            <p>${content}</p>
+        </div>
+        <div class="review-date">
+            ${currentDate}
+        </div>
+    `;
+
+    // Append the new review to the reviews list
+    const reviewsList = document.querySelector('.reviews-list');
+    reviewsList.insertBefore(reviewCard, reviewsList.firstChild.nextSibling);
+
+    // Reset form
+    this.reset();
+    stars.forEach(star => {
+        star.classList.remove('fas', 'active');
+        star.classList.add('far');
+    });
+    ratingValue.value = "0";
+
+    alert('Thank you for your review!');
 });
 </script>
 </body>
