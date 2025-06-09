@@ -481,12 +481,11 @@ s.classList.add('far');
 });
 });
 
-// Form submission handling
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-e.preventDefault();
-alert('Thank you for your message! I will get back to you soon.');
-this.reset();
+// Load reviews when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    displayReviews();
 });
+
 document.getElementById('reviewForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -499,7 +498,7 @@ document.getElementById('reviewForm').addEventListener('submit', function(e) {
         return;
     }
 
-    // 1. Create a new review object
+    // Create new review
     const newReview = {
         name,
         rating,
@@ -508,23 +507,27 @@ document.getElementById('reviewForm').addEventListener('submit', function(e) {
             year: 'numeric', 
             month: 'short', 
             day: 'numeric' 
-        })
+        }),
+        timestamp: new Date().getTime() // Added for proper sorting
     };
 
-    // 2. Get existing reviews from localStorage (or initialize empty array)
+    // Get existing reviews
     let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
-    // 3. Add the new review and keep only the latest 3
-    reviews.unshift(newReview); // Add to beginning (newest first)
-    reviews = reviews.slice(0, 3); // Keep only 3 most recent
+    // Add new review and sort by timestamp (newest first)
+    reviews.push(newReview);
+    reviews.sort((a, b) => b.timestamp - a.timestamp);
 
-    // 4. Save back to localStorage
+    // Keep only the 3 most recent
+    reviews = reviews.slice(0, 3);
+
+    // Save back to localStorage
     localStorage.setItem('reviews', JSON.stringify(reviews));
 
-    // 5. Update the displayed reviews
+    // Update display
     displayReviews();
 
-    // 6. Reset form
+    // Reset form
     this.reset();
     stars.forEach(star => {
         star.classList.remove('fas', 'active');
@@ -535,7 +538,6 @@ document.getElementById('reviewForm').addEventListener('submit', function(e) {
     alert("Thank you for your review!");
 });
 
-// Function to display reviews (call this on page load too)
 function displayReviews() {
     const reviewsList = document.querySelector('.reviews-list');
     reviewsList.innerHTML = '<h3 style="margin-bottom: 20px; color: var(--secondary);">Recent Reviews</h3>';
@@ -543,18 +545,16 @@ function displayReviews() {
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
     if (reviews.length === 0) {
-        // Show a placeholder if no reviews exist
         const placeholder = document.createElement('p');
         placeholder.textContent = "No reviews yet. Be the first to leave one!";
         placeholder.style.color = "var(--gray)";
         reviewsList.appendChild(placeholder);
     } else {
-        // Add each review to the DOM (latest first)
+        // Display reviews in reverse chronological order
         reviews.forEach(review => {
             const reviewCard = document.createElement('div');
             reviewCard.className = 'review-card';
 
-            // Generate stars HTML
             let starsHTML = '';
             for (let i = 1; i <= 5; i++) {
                 starsHTML += i <= review.rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
@@ -580,7 +580,6 @@ function displayReviews() {
         });
     }
 }
-
 // Load reviews when the page opens
 document.addEventListener('DOMContentLoaded', displayReviews);
 </script>
