@@ -486,19 +486,27 @@ document.addEventListener('DOMContentLoaded', function() {
     displayReviews();
 });
 
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    displayReviews();
+});
+
+// Handle review submission
 document.getElementById('reviewForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // Get form values
     const name = document.getElementById('reviewerName').value.trim();
     const rating = ratingValue.value;
     const content = document.getElementById('reviewContent').value.trim();
 
+    // Validate inputs
     if (rating === "0" || !name || !content) {
         alert("Please fill all fields and select a rating!");
         return;
     }
 
-    // Create new review
+    // Create new review with timestamp
     const newReview = {
         name,
         rating,
@@ -508,18 +516,19 @@ document.getElementById('reviewForm').addEventListener('submit', function(e) {
             month: 'short', 
             day: 'numeric' 
         }),
-        timestamp: new Date().getTime() // Added for proper sorting
+        timestamp: Date.now() // Critical for sorting
     };
 
     // Get existing reviews
     let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
-    // Add new review and sort by timestamp (newest first)
-    reviews.push(newReview);
-    reviews.sort((a, b) => b.timestamp - a.timestamp);
+    // Add new review
+    reviews.unshift(newReview); // Add to beginning (newest first)
 
     // Keep only the 3 most recent
-    reviews = reviews.slice(0, 3);
+    if (reviews.length > 3) {
+        reviews = reviews.slice(0, 3);
+    }
 
     // Save back to localStorage
     localStorage.setItem('reviews', JSON.stringify(reviews));
@@ -529,15 +538,12 @@ document.getElementById('reviewForm').addEventListener('submit', function(e) {
 
     // Reset form
     this.reset();
-    stars.forEach(star => {
-        star.classList.remove('fas', 'active');
-        star.classList.add('far');
-    });
-    ratingValue.value = "0";
-
+    resetStarRating();
+    
     alert("Thank you for your review!");
 });
 
+// Display all reviews
 function displayReviews() {
     const reviewsList = document.querySelector('.reviews-list');
     reviewsList.innerHTML = '<h3 style="margin-bottom: 20px; color: var(--secondary);">Recent Reviews</h3>';
@@ -550,7 +556,6 @@ function displayReviews() {
         placeholder.style.color = "var(--gray)";
         reviewsList.appendChild(placeholder);
     } else {
-        // Display reviews in reverse chronological order
         reviews.forEach(review => {
             const reviewCard = document.createElement('div');
             reviewCard.className = 'review-card';
@@ -580,8 +585,16 @@ function displayReviews() {
         });
     }
 }
-// Load reviews when the page opens
-document.addEventListener('DOMContentLoaded', displayReviews);
+
+// Reset star rating UI
+function resetStarRating() {
+    const stars = document.querySelectorAll('.rating-input i');
+    stars.forEach(star => {
+        star.classList.remove('fas', 'active');
+        star.classList.add('far');
+    });
+    document.getElementById('ratingValue').value = "0";
+}
 </script>
 </body>
 </html>
